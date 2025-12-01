@@ -9,15 +9,15 @@ namespace ComandaPro.Domain.Entities
 
         }
 
-        public Order(int id, Customer customer, DateTime date_Time, string status, Decimal totalValue) : base(id)
+        public Order(int id, User user, DateTime date_Time, string status, Decimal totalValue) : base(id)
         {
-            Customer = customer;
+            User = user;
             Date_Time = date_Time;
             Status = status;
             TotalValue = totalValue;
         }
 
-        public Customer Customer { get; set; }
+        public User User { get; set; }
         public DateTime Date_Time { get; set; }
         public string Status { get; set; }
         public Decimal TotalValue { get; set; }

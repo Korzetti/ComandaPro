@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22 d17.14
+VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComandaPro.Domain", "ComandaPro.Domain\ComandaPro.Domain.csproj", "{4706375D-0EF7-48DB-BFC1-7143ECD9A97F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComandaPro.Repository", "ComandaPro.Repository\ComandaPro.Repository.csproj", "{04E072E7-5A67-45C6-B23E-C9E545730CA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComandaPro.Test", "ComandaPro.Test\ComandaPro.Test.csproj", "{9AEEF74D-004E-4ACD-800D-0D1619D1116A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{4706375D-0EF7-48DB-BFC1-7143ECD9A97F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4706375D-0EF7-48DB-BFC1-7143ECD9A97F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4706375D-0EF7-48DB-BFC1-7143ECD9A97F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04E072E7-5A67-45C6-B23E-C9E545730CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E072E7-5A67-45C6-B23E-C9E545730CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E072E7-5A67-45C6-B23E-C9E545730CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E072E7-5A67-45C6-B23E-C9E545730CA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AEEF74D-004E-4ACD-800D-0D1619D1116A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AEEF74D-004E-4ACD-800D-0D1619D1116A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AEEF74D-004E-4ACD-800D-0D1619D1116A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AEEF74D-004E-4ACD-800D-0D1619D1116A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
