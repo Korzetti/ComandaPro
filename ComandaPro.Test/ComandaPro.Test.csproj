@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ComandaPro.Domain\ComandaPro.Domain.csproj" />
     <ProjectReference Include="..\ComandaPro.Repository\ComandaPro.Repository.csproj" />
+    <ProjectReference Include="..\ComandaPro.Service\ComandaPro.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>

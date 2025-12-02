@@ -6,6 +6,11 @@ namespace ComandaPro.Repository.Context
 {
     public class ComandaProContext : DbContext
     {
+        public ComandaProContext()
+        {
+            Database.EnsureCreated();
+        }
+
         public ComandaProContext(DbContextOptions<ComandaProContext>? op=null) : base(op) 
         {
             Database.EnsureCreated();

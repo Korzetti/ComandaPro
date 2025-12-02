@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComandaPro.Repository", "Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComandaPro.Test", "ComandaPro.Test\ComandaPro.Test.csproj", "{9AEEF74D-004E-4ACD-800D-0D1619D1116A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComandaPro.Service", "ComandaPro.Service\ComandaPro.Service.csproj", "{242E3BF9-F127-42E9-B80E-1C972C042F8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9AEEF74D-004E-4ACD-800D-0D1619D1116A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AEEF74D-004E-4ACD-800D-0D1619D1116A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AEEF74D-004E-4ACD-800D-0D1619D1116A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{242E3BF9-F127-42E9-B80E-1C972C042F8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{242E3BF9-F127-42E9-B80E-1C972C042F8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{242E3BF9-F127-42E9-B80E-1C972C042F8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{242E3BF9-F127-42E9-B80E-1C972C042F8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
