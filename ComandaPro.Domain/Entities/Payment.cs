@@ -23,4 +23,5 @@ namespace ComandaPro.Domain.Entities
         public DateTime PaymentDate { get; set; }
 
     }
+
 }
