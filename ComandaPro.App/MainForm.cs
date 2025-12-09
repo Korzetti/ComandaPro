@@ -17,7 +17,7 @@ namespace ComandaPro.App
         {
             var login = ConfigureDI.serviceProvider!.GetService<Login>();
             
-            if (login != null && !login.IsDisposed)
+            if (login.ShowDialog() != DialogResult.OK)
             {
                 Environment.Exit(0);
             }
