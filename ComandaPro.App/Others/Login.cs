@@ -1,4 +1,5 @@
-﻿using ComandaPro.Domain.Base;
+﻿using ComandaPro.App.Infra;
+using ComandaPro.Domain.Base;
 using ComandaPro.Domain.Entities;
 using System.Runtime.InteropServices;
 
@@ -33,6 +34,9 @@ namespace ComandaPro.App.Others
 
         #region Events
 
+        //
+        //cancelPb
+        //
         private void cancelPb_Click(object sender, EventArgs e)
         {
             Close();
@@ -45,6 +49,25 @@ namespace ComandaPro.App.Others
         private void cancelPb_MouseLeave(object sender, EventArgs e)
         {
             cancelPb.Cursor = Cursors.Default;
+        }
+
+        //
+        //crownLabel3
+        //
+
+        private void crownLabel3_MouseEnter(object sender, EventArgs e)
+        {
+            crownLabel3.Cursor = Cursors.Hand;
+        }
+
+        private void crownLabel3_MouseLeave(object sender, EventArgs e)
+        {
+            crownLabel3.Cursor = Cursors.Default;
+        }
+
+        private void crownLabel3_Click(object sender, EventArgs e)
+        {
+
         }
 
         #endregion
