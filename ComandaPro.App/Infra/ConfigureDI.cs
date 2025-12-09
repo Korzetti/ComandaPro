@@ -32,11 +32,12 @@ namespace ComandaPro.App.Infra
             );
 
             #region Repositories
-            
+            services.AddScoped<IBaseRepository<User>, BaseRepository<User>>();
 
             #endregion
 
             #region Services
+            services.AddScoped<IBaseService<User>, BaseService<User>>();
            
 
             #endregion
@@ -51,7 +52,7 @@ namespace ComandaPro.App.Infra
             services.AddSingleton(
                 new MapperConfiguration(
                     config => {
-                        
+                        config.CreateMap<User, UserViewModel>();
                     },
                     NullLoggerFactory.Instance).CreateMapper()
                 );

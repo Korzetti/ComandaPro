@@ -28,30 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            imageList1 = new ImageList(components);
+            cancelPb = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)cancelPb).BeginInit();
             SuspendLayout();
             // 
-            // imageList1
+            // cancelPb
             // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-            imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "close.png");
+            cancelPb.Image = Properties.Resources.close;
+            cancelPb.Location = new Point(686, 12);
+            cancelPb.Name = "cancelPb";
+            cancelPb.Size = new Size(47, 44);
+            cancelPb.SizeMode = PictureBoxSizeMode.StretchImage;
+            cancelPb.TabIndex = 0;
+            cancelPb.TabStop = false;
+            cancelPb.Click += cancelPb_Click;
             // 
             // Login
             // 
             BackColor = Color.FromArgb(234, 88, 12);
             ClientSize = new Size(745, 456);
             ControlBox = false;
+            Controls.Add(cancelPb);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
+            ((System.ComponentModel.ISupportInitialize)cancelPb).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private ImageList imageList1;
+        private PictureBox cancelPb;
     }
 }

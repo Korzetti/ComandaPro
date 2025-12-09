@@ -12,9 +12,9 @@ namespace ComandaPro.App.Others
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void cancelPb_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            Close();
         }
     }
 }
