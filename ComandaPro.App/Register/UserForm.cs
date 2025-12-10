@@ -53,7 +53,17 @@ namespace ComandaPro.App.Register
             user.Document = documentTxt.Text;
             user.Email = emailTxt.Text;
             user.Password = passwordTxt.Text;
-            user.IsRestaurant = isRestaurant;
+
+            if (isRestaurant)
+            {
+                user.UserType = User.Type.Restaurant;
+            }
+            else
+            {
+                user.UserType = User.Type.Customer;
+
+            }
+
         }
 
         protected virtual void Save()
@@ -142,6 +152,5 @@ namespace ComandaPro.App.Register
 
         #endregion
 
-        
     }
 }

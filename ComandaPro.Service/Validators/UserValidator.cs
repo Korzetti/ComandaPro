@@ -11,9 +11,9 @@ namespace ComandaPro.Service.Validators
             RuleFor(n => n.Name)
                 .NotEmpty().WithMessage("Name is needed!");
             RuleFor(d => d.Document)
-                .Must(BeAValidCNPJ).When(d => d.IsRestaurant).WithMessage("Please put a valid CNPJ!");
+                .Must(BeAValidCNPJ).When(d => d.UserType == User.Type.Restaurant).WithMessage("Please put a valid CNPJ!");
             RuleFor(d => d.Document)
-                .Must(BeAValidCPF).When(d => !d.IsRestaurant).WithMessage("Please put a valid CPF!");
+                .Must(BeAValidCPF).When(d => d.UserType == User.Type.Customer).WithMessage("Please put a valid CPF!");
             RuleFor(e => e.Email)
                 .EmailAddress().WithMessage("Please put a valid Email!");
             RuleFor(a => a.Address)

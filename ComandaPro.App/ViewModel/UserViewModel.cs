@@ -1,4 +1,6 @@
-﻿namespace ComandaPro.App.ViewModel
+﻿using ComandaPro.Domain.Entities;
+
+namespace ComandaPro.App.ViewModel
 {
     public class UserViewModel
     {
@@ -9,7 +11,7 @@
         public string Document { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
-        public bool IsRestaurant { get; set; }
+        public User.Type UserType { get; set; }
 
     }
 }

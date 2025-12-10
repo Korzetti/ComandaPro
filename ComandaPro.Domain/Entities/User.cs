@@ -4,12 +4,20 @@ namespace ComandaPro.Domain.Entities
 {
     public class User : BaseEntity<int>
     {
+
+        public enum Type
+        {
+            Admin,
+            Customer,
+            Restaurant
+        }
+
         public User()
         {
 
         }
 
-        public User(int id, string name, string telephone, string address, string document, string password, string email, bool isRestaurant) : base(id)
+        public User(int id, string name, string telephone, string address, string document, string password, string email, Type usertype) : base(id)
         {
             Name = name;
             Telephone = telephone;
@@ -17,7 +25,7 @@ namespace ComandaPro.Domain.Entities
             Document = document;
             Password = password;
             Email = email;
-            IsRestaurant = isRestaurant;
+            UserType = usertype;
         }
 
         public string Name { get; set; }
@@ -26,6 +34,7 @@ namespace ComandaPro.Domain.Entities
         public string Document { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
-        public Boolean IsRestaurant { get; set; }
+        public Type UserType { get; set; }
+
     }
 }
