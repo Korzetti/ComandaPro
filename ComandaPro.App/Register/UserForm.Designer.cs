@@ -29,21 +29,6 @@
         private void InitializeComponent()
         {
             lostPanel1 = new ReaLTaiizor.Controls.LostPanel();
-            lostPanel2 = new ReaLTaiizor.Controls.LostPanel();
-            enterBtn = new ReaLTaiizor.Controls.Button();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            cpfLbl = new Label();
-            nameLbl = new Label();
-            passwordTxt = new ReaLTaiizor.Controls.MetroTextBox();
-            nameTxt = new ReaLTaiizor.Controls.MetroTextBox();
-            emailTxt = new ReaLTaiizor.Controls.MetroTextBox();
-            phoneTxt = new ReaLTaiizor.Controls.MetroTextBox();
-            addressTxt = new ReaLTaiizor.Controls.MetroTextBox();
-            cpfTxt = new ReaLTaiizor.Controls.MetroTextBox();
-            pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             crownLabel3 = new ReaLTaiizor.Controls.CrownLabel();
             pictureBox2 = new PictureBox();
@@ -52,18 +37,32 @@
             crownLabel1 = new ReaLTaiizor.Controls.CrownLabel();
             pictureBox1 = new PictureBox();
             button1 = new ReaLTaiizor.Controls.Button();
+            lostPanel2 = new ReaLTaiizor.Controls.LostPanel();
+            enterBtn = new ReaLTaiizor.Controls.Button();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            documentLbl = new Label();
+            nameLbl = new Label();
+            passwordTxt = new ReaLTaiizor.Controls.MetroTextBox();
+            nameTxt = new ReaLTaiizor.Controls.MetroTextBox();
+            emailTxt = new ReaLTaiizor.Controls.MetroTextBox();
+            phoneTxt = new ReaLTaiizor.Controls.MetroTextBox();
+            addressTxt = new ReaLTaiizor.Controls.MetroTextBox();
+            documentTxt = new ReaLTaiizor.Controls.MetroTextBox();
+            pictureBox4 = new PictureBox();
             lostPanel1.SuspendLayout();
-            lostPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            lostPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // lostPanel1
             // 
             lostPanel1.BackColor = Color.White;
-            lostPanel1.Controls.Add(lostPanel2);
             lostPanel1.Controls.Add(pictureBox3);
             lostPanel1.Controls.Add(crownLabel3);
             lostPanel1.Controls.Add(pictureBox2);
@@ -81,6 +80,128 @@
             lostPanel1.Size = new Size(329, 396);
             lostPanel1.TabIndex = 2;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources._return;
+            pictureBox3.Location = new Point(12, 352);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(34, 31);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 3;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
+            // 
+            // crownLabel3
+            // 
+            crownLabel3.AutoSize = true;
+            crownLabel3.BackColor = Color.FromArgb(234, 88, 12);
+            crownLabel3.Font = new Font("Georgia", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            crownLabel3.ForeColor = Color.Black;
+            crownLabel3.Location = new Point(112, 241);
+            crownLabel3.Name = "crownLabel3";
+            crownLabel3.Size = new Size(173, 38);
+            crownLabel3.TabIndex = 4;
+            crownLabel3.Text = "Restaurant";
+            crownLabel3.Click += typeRestaurant_Click;
+            crownLabel3.MouseEnter += button2_MouseEnter;
+            crownLabel3.MouseLeave += button2_MouseLeave;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.FromArgb(234, 88, 12);
+            pictureBox2.Image = Properties.Resources.restaurant__1_;
+            pictureBox2.Location = new Point(63, 238);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(48, 48);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 3;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += typeRestaurant_Click;
+            pictureBox2.MouseEnter += button2_MouseEnter;
+            pictureBox2.MouseLeave += button2_MouseLeave;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Transparent;
+            button2.BorderColor = Color.FromArgb(64, 64, 64);
+            button2.EnteredBorderColor = Color.FromArgb(64, 64, 64);
+            button2.EnteredColor = Color.FromArgb(64, 64, 64);
+            button2.Font = new Font("Microsoft Sans Serif", 12F);
+            button2.Image = null;
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.InactiveColor = Color.FromArgb(234, 88, 12);
+            button2.Location = new Point(53, 229);
+            button2.Name = "button2";
+            button2.PressedBorderColor = Color.FromArgb(64, 64, 64);
+            button2.PressedColor = Color.FromArgb(64, 64, 64);
+            button2.Size = new Size(235, 62);
+            button2.TabIndex = 4;
+            button2.TextAlignment = StringAlignment.Center;
+            button2.Click += typeRestaurant_Click;
+            button2.MouseEnter += button2_MouseEnter;
+            button2.MouseLeave += button2_MouseLeave;
+            // 
+            // crownLabel2
+            // 
+            crownLabel2.AutoSize = true;
+            crownLabel2.Font = new Font("Georgia", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            crownLabel2.ForeColor = Color.Black;
+            crownLabel2.Location = new Point(76, 44);
+            crownLabel2.Name = "crownLabel2";
+            crownLabel2.Size = new Size(197, 43);
+            crownLabel2.TabIndex = 3;
+            crownLabel2.Text = "User Type:";
+            // 
+            // crownLabel1
+            // 
+            crownLabel1.AutoSize = true;
+            crownLabel1.BackColor = Color.FromArgb(234, 88, 12);
+            crownLabel1.Font = new Font("Georgia", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            crownLabel1.ForeColor = Color.Black;
+            crownLabel1.Location = new Point(112, 132);
+            crownLabel1.Name = "crownLabel1";
+            crownLabel1.Size = new Size(155, 38);
+            crownLabel1.TabIndex = 3;
+            crownLabel1.Text = "Customer";
+            crownLabel1.Click += typeUser_Click;
+            crownLabel1.MouseEnter += button1_MouseEnter;
+            crownLabel1.MouseLeave += button1_MouseLeave;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.FromArgb(234, 88, 12);
+            pictureBox1.Image = Properties.Resources.user__1_;
+            pictureBox1.Location = new Point(63, 127);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(49, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += typeUser_Click;
+            pictureBox1.MouseEnter += button1_MouseEnter;
+            pictureBox1.MouseLeave += button1_MouseLeave;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.BorderColor = Color.FromArgb(64, 64, 64);
+            button1.EnteredBorderColor = Color.FromArgb(64, 64, 64);
+            button1.EnteredColor = Color.FromArgb(64, 64, 64);
+            button1.Font = new Font("Microsoft Sans Serif", 12F);
+            button1.Image = null;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.InactiveColor = Color.FromArgb(234, 88, 12);
+            button1.Location = new Point(53, 120);
+            button1.Name = "button1";
+            button1.PressedBorderColor = Color.FromArgb(64, 64, 64);
+            button1.PressedColor = Color.FromArgb(64, 64, 64);
+            button1.Size = new Size(235, 62);
+            button1.TabIndex = 0;
+            button1.TextAlignment = StringAlignment.Center;
+            button1.Click += typeUser_Click;
+            button1.MouseEnter += button1_MouseEnter;
+            button1.MouseLeave += button1_MouseLeave;
+            // 
             // lostPanel2
             // 
             lostPanel2.BackColor = Color.White;
@@ -89,18 +210,18 @@
             lostPanel2.Controls.Add(label3);
             lostPanel2.Controls.Add(label2);
             lostPanel2.Controls.Add(label1);
-            lostPanel2.Controls.Add(cpfLbl);
+            lostPanel2.Controls.Add(documentLbl);
             lostPanel2.Controls.Add(nameLbl);
             lostPanel2.Controls.Add(passwordTxt);
             lostPanel2.Controls.Add(nameTxt);
             lostPanel2.Controls.Add(emailTxt);
             lostPanel2.Controls.Add(phoneTxt);
             lostPanel2.Controls.Add(addressTxt);
-            lostPanel2.Controls.Add(cpfTxt);
+            lostPanel2.Controls.Add(documentTxt);
             lostPanel2.Controls.Add(pictureBox4);
             lostPanel2.Font = new Font("Segoe UI", 12F);
             lostPanel2.ForeColor = Color.White;
-            lostPanel2.Location = new Point(0, 0);
+            lostPanel2.Location = new Point(200, 18);
             lostPanel2.Name = "lostPanel2";
             lostPanel2.Padding = new Padding(5);
             lostPanel2.ShowText = true;
@@ -125,6 +246,7 @@
             enterBtn.TabIndex = 16;
             enterBtn.Text = "Register";
             enterBtn.TextAlignment = StringAlignment.Center;
+            enterBtn.Click += enterBtn_Click;
             // 
             // label4
             // 
@@ -170,16 +292,15 @@
             label1.TabIndex = 12;
             label1.Text = "Address";
             // 
-            // cpfLbl
+            // documentLbl
             // 
-            cpfLbl.AutoSize = true;
-            cpfLbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cpfLbl.ForeColor = Color.Black;
-            cpfLbl.Location = new Point(48, 80);
-            cpfLbl.Name = "cpfLbl";
-            cpfLbl.Size = new Size(29, 17);
-            cpfLbl.TabIndex = 11;
-            cpfLbl.Text = "CPF";
+            documentLbl.AutoSize = true;
+            documentLbl.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            documentLbl.ForeColor = Color.Black;
+            documentLbl.Location = new Point(48, 80);
+            documentLbl.Name = "documentLbl";
+            documentLbl.Size = new Size(0, 17);
+            documentLbl.TabIndex = 11;
             // 
             // nameLbl
             // 
@@ -337,34 +458,34 @@
             addressTxt.UseSystemPasswordChar = false;
             addressTxt.WatermarkText = "";
             // 
-            // cpfTxt
+            // documentTxt
             // 
-            cpfTxt.AutoCompleteCustomSource = null;
-            cpfTxt.AutoCompleteMode = AutoCompleteMode.None;
-            cpfTxt.AutoCompleteSource = AutoCompleteSource.None;
-            cpfTxt.BorderColor = Color.FromArgb(155, 155, 155);
-            cpfTxt.DisabledBackColor = Color.FromArgb(204, 204, 204);
-            cpfTxt.DisabledBorderColor = Color.FromArgb(155, 155, 155);
-            cpfTxt.DisabledForeColor = Color.FromArgb(136, 136, 136);
-            cpfTxt.Font = new Font("Microsoft Sans Serif", 10F);
-            cpfTxt.HoverColor = Color.FromArgb(102, 102, 102);
-            cpfTxt.Image = null;
-            cpfTxt.IsDerivedStyle = true;
-            cpfTxt.Lines = null;
-            cpfTxt.Location = new Point(48, 97);
-            cpfTxt.MaxLength = 32767;
-            cpfTxt.Multiline = false;
-            cpfTxt.Name = "cpfTxt";
-            cpfTxt.ReadOnly = false;
-            cpfTxt.Size = new Size(241, 30);
-            cpfTxt.Style = ReaLTaiizor.Enum.Metro.Style.Light;
-            cpfTxt.StyleManager = null;
-            cpfTxt.TabIndex = 5;
-            cpfTxt.TextAlign = HorizontalAlignment.Left;
-            cpfTxt.ThemeAuthor = "Taiizor";
-            cpfTxt.ThemeName = "MetroLight";
-            cpfTxt.UseSystemPasswordChar = false;
-            cpfTxt.WatermarkText = "";
+            documentTxt.AutoCompleteCustomSource = null;
+            documentTxt.AutoCompleteMode = AutoCompleteMode.None;
+            documentTxt.AutoCompleteSource = AutoCompleteSource.None;
+            documentTxt.BorderColor = Color.FromArgb(155, 155, 155);
+            documentTxt.DisabledBackColor = Color.FromArgb(204, 204, 204);
+            documentTxt.DisabledBorderColor = Color.FromArgb(155, 155, 155);
+            documentTxt.DisabledForeColor = Color.FromArgb(136, 136, 136);
+            documentTxt.Font = new Font("Microsoft Sans Serif", 10F);
+            documentTxt.HoverColor = Color.FromArgb(102, 102, 102);
+            documentTxt.Image = null;
+            documentTxt.IsDerivedStyle = true;
+            documentTxt.Lines = null;
+            documentTxt.Location = new Point(48, 97);
+            documentTxt.MaxLength = 32767;
+            documentTxt.Multiline = false;
+            documentTxt.Name = "documentTxt";
+            documentTxt.ReadOnly = false;
+            documentTxt.Size = new Size(241, 30);
+            documentTxt.Style = ReaLTaiizor.Enum.Metro.Style.Light;
+            documentTxt.StyleManager = null;
+            documentTxt.TabIndex = 5;
+            documentTxt.TextAlign = HorizontalAlignment.Left;
+            documentTxt.ThemeAuthor = "Taiizor";
+            documentTxt.ThemeName = "MetroLight";
+            documentTxt.UseSystemPasswordChar = false;
+            documentTxt.WatermarkText = "";
             // 
             // pictureBox4
             // 
@@ -375,128 +496,7 @@
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = Properties.Resources._return;
-            pictureBox3.Location = new Point(12, 352);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(34, 31);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 3;
-            pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
-            // 
-            // crownLabel3
-            // 
-            crownLabel3.AutoSize = true;
-            crownLabel3.BackColor = Color.FromArgb(234, 88, 12);
-            crownLabel3.Font = new Font("Georgia", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            crownLabel3.ForeColor = Color.Black;
-            crownLabel3.Location = new Point(112, 241);
-            crownLabel3.Name = "crownLabel3";
-            crownLabel3.Size = new Size(173, 38);
-            crownLabel3.TabIndex = 4;
-            crownLabel3.Text = "Restaurant";
-            crownLabel3.Click += typeRestaurant_Click;
-            crownLabel3.MouseEnter += button2_MouseEnter;
-            crownLabel3.MouseLeave += button2_MouseLeave;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = Color.FromArgb(234, 88, 12);
-            pictureBox2.Image = Properties.Resources.restaurant__1_;
-            pictureBox2.Location = new Point(63, 238);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(48, 48);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += typeRestaurant_Click;
-            pictureBox2.MouseEnter += button2_MouseEnter;
-            pictureBox2.MouseLeave += button2_MouseLeave;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Transparent;
-            button2.BorderColor = Color.FromArgb(64, 64, 64);
-            button2.EnteredBorderColor = Color.FromArgb(64, 64, 64);
-            button2.EnteredColor = Color.FromArgb(64, 64, 64);
-            button2.Font = new Font("Microsoft Sans Serif", 12F);
-            button2.Image = null;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.InactiveColor = Color.FromArgb(234, 88, 12);
-            button2.Location = new Point(53, 229);
-            button2.Name = "button2";
-            button2.PressedBorderColor = Color.FromArgb(64, 64, 64);
-            button2.PressedColor = Color.FromArgb(64, 64, 64);
-            button2.Size = new Size(235, 62);
-            button2.TabIndex = 4;
-            button2.TextAlignment = StringAlignment.Center;
-            button2.Click += typeRestaurant_Click;
-            button2.MouseEnter += button2_MouseEnter;
-            button2.MouseLeave += button2_MouseLeave;
-            // 
-            // crownLabel2
-            // 
-            crownLabel2.AutoSize = true;
-            crownLabel2.Font = new Font("Georgia", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            crownLabel2.ForeColor = Color.Black;
-            crownLabel2.Location = new Point(76, 44);
-            crownLabel2.Name = "crownLabel2";
-            crownLabel2.Size = new Size(197, 43);
-            crownLabel2.TabIndex = 3;
-            crownLabel2.Text = "User Type:";
-            // 
-            // crownLabel1
-            // 
-            crownLabel1.AutoSize = true;
-            crownLabel1.BackColor = Color.FromArgb(234, 88, 12);
-            crownLabel1.Font = new Font("Georgia", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            crownLabel1.ForeColor = Color.Black;
-            crownLabel1.Location = new Point(112, 132);
-            crownLabel1.Name = "crownLabel1";
-            crownLabel1.Size = new Size(155, 38);
-            crownLabel1.TabIndex = 3;
-            crownLabel1.Text = "Customer";
-            crownLabel1.Click += typeUser_Click;
-            crownLabel1.MouseEnter += button1_MouseEnter;
-            crownLabel1.MouseLeave += button1_MouseLeave;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.FromArgb(234, 88, 12);
-            pictureBox1.Image = Properties.Resources.user__1_;
-            pictureBox1.Location = new Point(63, 127);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(49, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += typeUser_Click;
-            pictureBox1.MouseEnter += button1_MouseEnter;
-            pictureBox1.MouseLeave += button1_MouseLeave;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Transparent;
-            button1.BorderColor = Color.FromArgb(64, 64, 64);
-            button1.EnteredBorderColor = Color.FromArgb(64, 64, 64);
-            button1.EnteredColor = Color.FromArgb(64, 64, 64);
-            button1.Font = new Font("Microsoft Sans Serif", 12F);
-            button1.Image = null;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.InactiveColor = Color.FromArgb(234, 88, 12);
-            button1.Location = new Point(53, 120);
-            button1.Name = "button1";
-            button1.PressedBorderColor = Color.FromArgb(64, 64, 64);
-            button1.PressedColor = Color.FromArgb(64, 64, 64);
-            button1.Size = new Size(235, 62);
-            button1.TabIndex = 0;
-            button1.TextAlignment = StringAlignment.Center;
-            button1.Click += typeUser_Click;
-            button1.MouseEnter += button1_MouseEnter;
-            button1.MouseLeave += button1_MouseLeave;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // UserForm
             // 
@@ -504,6 +504,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(234, 88, 12);
             ClientSize = new Size(729, 433);
+            Controls.Add(lostPanel2);
             Controls.Add(lostPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "UserForm";
@@ -512,12 +513,12 @@
             MouseDown += Login_MouseDown;
             lostPanel1.ResumeLayout(false);
             lostPanel1.PerformLayout();
-            lostPanel2.ResumeLayout(false);
-            lostPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            lostPanel2.ResumeLayout(false);
+            lostPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }
 
@@ -538,12 +539,12 @@
         private ReaLTaiizor.Controls.MetroTextBox emailTxt;
         private ReaLTaiizor.Controls.MetroTextBox phoneTxt;
         private ReaLTaiizor.Controls.MetroTextBox addressTxt;
-        private ReaLTaiizor.Controls.MetroTextBox cpfTxt;
+        private ReaLTaiizor.Controls.MetroTextBox documentTxt;
         private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
-        private Label cpfLbl;
+        private Label documentLbl;
         private Label nameLbl;
         private ReaLTaiizor.Controls.Button enterBtn;
     }

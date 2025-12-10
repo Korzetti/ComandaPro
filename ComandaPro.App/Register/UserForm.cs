@@ -50,7 +50,7 @@ namespace ComandaPro.App.Register
             user.Name = nameTxt.Text;
             user.Telephone = phoneTxt.Text;
             user.Address = addressTxt.Text;
-            user.Document = cpfTxt.Text;
+            user.Document = documentTxt.Text;
             user.Email = emailTxt.Text;
             user.Password = passwordTxt.Text;
             user.IsRestaurant = isRestaurant;
@@ -63,11 +63,20 @@ namespace ComandaPro.App.Register
                 var user = new User();
                 FormToObject(user);
                 user = _userService.Add<User, User, UserValidator>(user);
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, @"ComandaPro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void enterBtn_Click(object sender, EventArgs e)
+        {
+            Save();
+            
         }
 
         #endregion
@@ -114,16 +123,25 @@ namespace ComandaPro.App.Register
         private void typeUser_Click(object sender, EventArgs e)
         {
             isRestaurant = false;
+            documentLbl.Text = "CPF";
             onTypeClick();
         }
 
         private void typeRestaurant_Click(object sender, EventArgs e)
         {
             isRestaurant = true;
+            documentLbl.Text = "CNPJ";
             onTypeClick();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            lostPanel2.Visible = false;
+            lostPanel1.Visible = true;
         }
 
         #endregion
 
+        
     }
 }
