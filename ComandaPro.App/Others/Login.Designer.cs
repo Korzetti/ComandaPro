@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cancelPb = new PictureBox();
             lostPanel1 = new ReaLTaiizor.Controls.LostPanel();
             registerLbl = new ReaLTaiizor.Controls.CrownLabel();
             crownLabel2 = new ReaLTaiizor.Controls.CrownLabel();
@@ -37,23 +36,11 @@
             emailTxt = new ReaLTaiizor.Controls.HopeTextBox();
             crownLabel1 = new ReaLTaiizor.Controls.CrownLabel();
             pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)cancelPb).BeginInit();
+            cancelPb = new PictureBox();
             lostPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cancelPb).BeginInit();
             SuspendLayout();
-            // 
-            // cancelPb
-            // 
-            cancelPb.Image = Properties.Resources.close;
-            cancelPb.Location = new Point(686, 12);
-            cancelPb.Name = "cancelPb";
-            cancelPb.Size = new Size(47, 44);
-            cancelPb.SizeMode = PictureBoxSizeMode.StretchImage;
-            cancelPb.TabIndex = 0;
-            cancelPb.TabStop = false;
-            cancelPb.Click += cancelPb_Click;
-            cancelPb.MouseEnter += cancelPb_MouseEnter;
-            cancelPb.MouseLeave += cancelPb_MouseLeave;
             // 
             // lostPanel1
             // 
@@ -117,6 +104,7 @@
             enterBtn.TabIndex = 3;
             enterBtn.Text = "Enter";
             enterBtn.TextAlignment = StringAlignment.Center;
+            enterBtn.Click += enterBtn_Click;
             // 
             // passwordTxt
             // 
@@ -187,6 +175,19 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // cancelPb
+            // 
+            cancelPb.Image = Properties.Resources.close;
+            cancelPb.Location = new Point(701, 12);
+            cancelPb.Name = "cancelPb";
+            cancelPb.Size = new Size(32, 32);
+            cancelPb.SizeMode = PictureBoxSizeMode.StretchImage;
+            cancelPb.TabIndex = 0;
+            cancelPb.TabStop = false;
+            cancelPb.Click += cancelPb_Click;
+            cancelPb.MouseEnter += cancelPb_MouseEnter;
+            cancelPb.MouseLeave += cancelPb_MouseLeave;
+            // 
             // Login
             // 
             BackColor = Color.FromArgb(234, 88, 12);
@@ -199,16 +200,14 @@
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             MouseDown += Login_MouseDown;
-            ((System.ComponentModel.ISupportInitialize)cancelPb).EndInit();
             lostPanel1.ResumeLayout(false);
             lostPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cancelPb).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private PictureBox cancelPb;
         private ReaLTaiizor.Controls.LostPanel lostPanel1;
         private PictureBox pictureBox1;
         private ReaLTaiizor.Controls.CrownLabel crownLabel1;
@@ -217,5 +216,6 @@
         private ReaLTaiizor.Controls.Button enterBtn;
         private ReaLTaiizor.Controls.CrownLabel registerLbl;
         private ReaLTaiizor.Controls.CrownLabel crownLabel2;
+        private PictureBox cancelPb;
     }
 }
