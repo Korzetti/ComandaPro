@@ -1,20 +1,129 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using ComandaPro.App.ViewModel;
+using ComandaPro.Domain.Base;
+using ComandaPro.Domain.Entities;
+using ComandaPro.Service.Validators;
+using System.Runtime.InteropServices;
 
 namespace ComandaPro.App.Register
 {
     public partial class UserForm : Form
     {
-        public UserForm()
+        #region draggable form
+
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wMsg, int wParam, int lParam);
+
+        private void Login_MouseDown(object sender, MouseEventArgs e)
         {
-            InitializeComponent();
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, 0x112, 0xf012, 0);
+            }
         }
+
+        #endregion
+
+        private IBaseService<User> _userService;
+        private List<UserViewModel> _users;
+        private bool isRestaurant;
+
+        public UserForm(IBaseService<User> userService)
+        {
+            _userService = userService;
+            InitializeComponent();
+            lostPanel2.Visible = false;
+        }
+
+        #region Methods
+
+        private void onTypeClick()
+        {
+            lostPanel1.Visible = false;
+            lostPanel2.Visible = true;
+        }
+
+        private void FormToObject(User user)
+        {
+            user.Name = nameTxt.Text;
+            user.Telephone = phoneTxt.Text;
+            user.Address = addressTxt.Text;
+            user.Document = cpfTxt.Text;
+            user.Email = emailTxt.Text;
+            user.Password = passwordTxt.Text;
+            user.IsRestaurant = isRestaurant;
+        }
+
+        protected virtual void Save()
+        {
+            try
+            {
+                var user = new User();
+                FormToObject(user);
+                user = _userService.Add<User, User, UserValidator>(user);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, @"ComandaPro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
+
+        #region Events
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            crownLabel1.BackColor = Color.FromArgb(64, 64, 64);
+            pictureBox1.BackColor = Color.FromArgb(64, 64, 64);
+            button1.InactiveColor = Color.FromArgb(64, 64, 64);
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            crownLabel1.BackColor = Color.FromArgb(234, 88, 12);
+            pictureBox1.BackColor = Color.FromArgb(234, 88, 12);
+            button1.InactiveColor = Color.FromArgb(234, 88, 12);
+            this.Cursor = Cursors.Default;
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            crownLabel3.BackColor = Color.FromArgb(64, 64, 64);
+            pictureBox2.BackColor = Color.FromArgb(64, 64, 64);
+            button2.InactiveColor = Color.FromArgb(64, 64, 64);
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            crownLabel3.BackColor = Color.FromArgb(234, 88, 12);
+            pictureBox2.BackColor = Color.FromArgb(234, 88, 12);
+            button2.InactiveColor = Color.FromArgb(234, 88, 12);
+            this.Cursor = Cursors.Default;
+        }
+
+        private void typeUser_Click(object sender, EventArgs e)
+        {
+            isRestaurant = false;
+            onTypeClick();
+        }
+
+        private void typeRestaurant_Click(object sender, EventArgs e)
+        {
+            isRestaurant = true;
+            onTypeClick();
+        }
+
+        #endregion
+
     }
 }

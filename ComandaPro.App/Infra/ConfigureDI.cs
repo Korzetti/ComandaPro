@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ComandaPro.App.Others;
 using ComandaPro.App.ViewModel;
+using ComandaPro.App.Register;
 using ComandaPro.Domain.Base;
 using ComandaPro.Domain.Entities;
 using ComandaPro.Repository.Context;
@@ -44,6 +45,7 @@ namespace ComandaPro.App.Infra
 
             #region Forms
             services.AddTransient<Login, Login>();
+            services.AddTransient<UserForm, UserForm>();
 
 
             #endregion

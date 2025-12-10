@@ -1,6 +1,8 @@
 ﻿using ComandaPro.App.Infra;
+using ComandaPro.App.Register;
 using ComandaPro.Domain.Base;
 using ComandaPro.Domain.Entities;
+using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.InteropServices;
 
 namespace ComandaPro.App.Others
@@ -57,17 +59,24 @@ namespace ComandaPro.App.Others
 
         private void crownLabel3_MouseEnter(object sender, EventArgs e)
         {
-            crownLabel3.Cursor = Cursors.Hand;
+            registerLbl.Cursor = Cursors.Hand;
         }
 
         private void crownLabel3_MouseLeave(object sender, EventArgs e)
         {
-            crownLabel3.Cursor = Cursors.Default;
+            registerLbl.Cursor = Cursors.Default;
         }
 
-        private void crownLabel3_Click(object sender, EventArgs e)
+        private void registerLbl_Click(object sender, EventArgs e)
         {
+            var registerForm = ConfigureDI.serviceProvider!.GetService<UserForm>();
 
+            if (registerForm != null && !registerForm.IsDisposed)
+            {
+                this.Visible = false;
+                registerForm.ShowDialog();
+                this.Visible = true;
+            }
         }
 
         #endregion

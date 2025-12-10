@@ -30,9 +30,9 @@
         {
             cancelPb = new PictureBox();
             lostPanel1 = new ReaLTaiizor.Controls.LostPanel();
-            crownLabel3 = new ReaLTaiizor.Controls.CrownLabel();
+            registerLbl = new ReaLTaiizor.Controls.CrownLabel();
             crownLabel2 = new ReaLTaiizor.Controls.CrownLabel();
-            button1 = new ReaLTaiizor.Controls.Button();
+            enterBtn = new ReaLTaiizor.Controls.Button();
             passwordTxt = new ReaLTaiizor.Controls.HopeTextBox();
             emailTxt = new ReaLTaiizor.Controls.HopeTextBox();
             crownLabel1 = new ReaLTaiizor.Controls.CrownLabel();
@@ -58,9 +58,9 @@
             // lostPanel1
             // 
             lostPanel1.BackColor = Color.White;
-            lostPanel1.Controls.Add(crownLabel3);
+            lostPanel1.Controls.Add(registerLbl);
             lostPanel1.Controls.Add(crownLabel2);
-            lostPanel1.Controls.Add(button1);
+            lostPanel1.Controls.Add(enterBtn);
             lostPanel1.Controls.Add(passwordTxt);
             lostPanel1.Controls.Add(emailTxt);
             lostPanel1.Controls.Add(crownLabel1);
@@ -73,20 +73,20 @@
             lostPanel1.Size = new Size(329, 396);
             lostPanel1.TabIndex = 1;
             // 
-            // crownLabel3
+            // registerLbl
             // 
-            crownLabel3.AutoSize = true;
-            crownLabel3.BackColor = Color.Transparent;
-            crownLabel3.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            crownLabel3.ForeColor = Color.FromArgb(234, 88, 12);
-            crownLabel3.Location = new Point(189, 355);
-            crownLabel3.Name = "crownLabel3";
-            crownLabel3.Size = new Size(93, 18);
-            crownLabel3.TabIndex = 4;
-            crownLabel3.Text = "Cadastre-se";
-            crownLabel3.Click += crownLabel3_Click;
-            crownLabel3.MouseEnter += crownLabel3_MouseEnter;
-            crownLabel3.MouseLeave += crownLabel3_MouseLeave;
+            registerLbl.AutoSize = true;
+            registerLbl.BackColor = Color.Transparent;
+            registerLbl.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            registerLbl.ForeColor = Color.FromArgb(234, 88, 12);
+            registerLbl.Location = new Point(205, 355);
+            registerLbl.Name = "registerLbl";
+            registerLbl.Size = new Size(67, 18);
+            registerLbl.TabIndex = 4;
+            registerLbl.Text = "Register";
+            registerLbl.Click += registerLbl_Click;
+            registerLbl.MouseEnter += crownLabel3_MouseEnter;
+            registerLbl.MouseLeave += crownLabel3_MouseLeave;
             // 
             // crownLabel2
             // 
@@ -95,28 +95,28 @@
             crownLabel2.ForeColor = Color.Black;
             crownLabel2.Location = new Point(39, 355);
             crownLabel2.Name = "crownLabel2";
-            crownLabel2.Size = new Size(153, 18);
+            crownLabel2.Size = new Size(170, 18);
             crownLabel2.TabIndex = 2;
-            crownLabel2.Text = "Não tem uma conta?";
+            crownLabel2.Text = "Don't have an account?";
             // 
-            // button1
+            // enterBtn
             // 
-            button1.BackColor = Color.White;
-            button1.BorderColor = Color.Empty;
-            button1.EnteredBorderColor = Color.FromArgb(64, 64, 64);
-            button1.EnteredColor = Color.FromArgb(64, 64, 64);
-            button1.Font = new Font("Microsoft Sans Serif", 12F);
-            button1.Image = null;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.InactiveColor = Color.FromArgb(234, 88, 12);
-            button1.Location = new Point(110, 291);
-            button1.Name = "button1";
-            button1.PressedBorderColor = Color.FromArgb(64, 64, 64);
-            button1.PressedColor = Color.FromArgb(64, 64, 64);
-            button1.Size = new Size(120, 40);
-            button1.TabIndex = 3;
-            button1.Text = "Entrar";
-            button1.TextAlignment = StringAlignment.Center;
+            enterBtn.BackColor = Color.White;
+            enterBtn.BorderColor = Color.Empty;
+            enterBtn.EnteredBorderColor = Color.FromArgb(64, 64, 64);
+            enterBtn.EnteredColor = Color.FromArgb(64, 64, 64);
+            enterBtn.Font = new Font("Microsoft Sans Serif", 12F);
+            enterBtn.Image = null;
+            enterBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            enterBtn.InactiveColor = Color.FromArgb(234, 88, 12);
+            enterBtn.Location = new Point(110, 291);
+            enterBtn.Name = "enterBtn";
+            enterBtn.PressedBorderColor = Color.FromArgb(64, 64, 64);
+            enterBtn.PressedColor = Color.FromArgb(64, 64, 64);
+            enterBtn.Size = new Size(120, 40);
+            enterBtn.TabIndex = 3;
+            enterBtn.Text = "Enter";
+            enterBtn.TextAlignment = StringAlignment.Center;
             // 
             // passwordTxt
             // 
@@ -131,7 +131,7 @@
             passwordTxt.MaxLength = 32767;
             passwordTxt.Multiline = false;
             passwordTxt.Name = "passwordTxt";
-            passwordTxt.PasswordChar = '\0';
+            passwordTxt.PasswordChar = '•';
             passwordTxt.ScrollBars = ScrollBars.None;
             passwordTxt.SelectedText = "";
             passwordTxt.SelectionLength = 0;
@@ -214,8 +214,8 @@
         private ReaLTaiizor.Controls.CrownLabel crownLabel1;
         private ReaLTaiizor.Controls.HopeTextBox passwordTxt;
         private ReaLTaiizor.Controls.HopeTextBox emailTxt;
-        private ReaLTaiizor.Controls.Button button1;
-        private ReaLTaiizor.Controls.CrownLabel crownLabel3;
+        private ReaLTaiizor.Controls.Button enterBtn;
+        private ReaLTaiizor.Controls.CrownLabel registerLbl;
         private ReaLTaiizor.Controls.CrownLabel crownLabel2;
     }
 }
