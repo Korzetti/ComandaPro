@@ -3,8 +3,6 @@ using ComandaPro.App.Others;
 using ComandaPro.App.ViewModel;
 using ComandaPro.Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualBasic.ApplicationServices;
-using System.Xml.Linq;
 
 namespace ComandaPro.App
 {
@@ -27,10 +25,7 @@ namespace ComandaPro.App
             }
             else
             {
-                if (User.UserType == User.Type.Admin)
-                {
-                    adminPanel.Visible = true;
-                }
+                ConfigurePanels();
 
                 nameLbl.Text = User.Name;
                 emailLbl.Text = User.Email;
@@ -38,14 +33,37 @@ namespace ComandaPro.App
 
         }
 
-        #region Base Panel 
+        private void ConfigurePanels()
+        {
+            adminPanel.Visible = false;
+            //restaurantPanel.Visible = false;
+            //customerPanel.Visible = false;
+
+            if (User.UserType == null) return;
+
+            switch (User.UserType)
+            {
+                case User.Type.Admin:
+                    adminPanel.Visible = true;
+                    break;
+
+                case User.Type.Restaurant:
+                   // pnlRestaurant.Visible = true;
+                    break;
+
+                case User.Type.Customer:
+                    //pnlCustomer.Visible = true;
+                    break;
+
+                default:
+                    MessageBox.Show("Unknown user type.");
+                    break;
+            }
+        }
 
         private void Logout()
         {
             User = null;
-
-            adminPanel.Visible = false;
-            //customerPanel.Visible = false;
 
             this.Hide();
             LoadLogin();
@@ -57,7 +75,6 @@ namespace ComandaPro.App
             Logout();
         }
 
-        #endregion
 
         #region Admin Panel
 

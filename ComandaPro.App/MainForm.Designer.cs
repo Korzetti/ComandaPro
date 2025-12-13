@@ -40,7 +40,6 @@
             crownLabel1 = new ReaLTaiizor.Controls.CrownLabel();
             adminPanel = new ReaLTaiizor.Controls.LostPanel();
             userMngPanel = new ReaLTaiizor.Controls.LostBorderPanel();
-            materialListView1 = new ReaLTaiizor.Controls.MaterialListView();
             lostBorderPanel4 = new ReaLTaiizor.Controls.LostBorderPanel();
             btnOrder = new ReaLTaiizor.Controls.Button();
             btnRestaurant = new ReaLTaiizor.Controls.Button();
@@ -61,7 +60,6 @@
             logoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             adminPanel.SuspendLayout();
-            userMngPanel.SuspendLayout();
             lostBorderPanel4.SuspendLayout();
             lostBorderPanel5.SuspendLayout();
             lostBorderPanel6.SuspendLayout();
@@ -218,7 +216,6 @@
             // 
             userMngPanel.BackColor = Color.White;
             userMngPanel.BorderColor = Color.Silver;
-            userMngPanel.Controls.Add(materialListView1);
             userMngPanel.Dock = DockStyle.Right;
             userMngPanel.Font = new Font("Segoe UI", 12F);
             userMngPanel.ForeColor = Color.White;
@@ -229,24 +226,6 @@
             userMngPanel.Size = new Size(581, 451);
             userMngPanel.TabIndex = 1;
             userMngPanel.Text = "lostBorderPanel8";
-            // 
-            // materialListView1
-            // 
-            materialListView1.AutoSizeTable = false;
-            materialListView1.BackColor = Color.FromArgb(255, 255, 255);
-            materialListView1.BorderStyle = BorderStyle.None;
-            materialListView1.Depth = 0;
-            materialListView1.FullRowSelect = true;
-            materialListView1.Location = new Point(75, 44);
-            materialListView1.MinimumSize = new Size(200, 100);
-            materialListView1.MouseLocation = new Point(-1, -1);
-            materialListView1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            materialListView1.Name = "materialListView1";
-            materialListView1.OwnerDraw = true;
-            materialListView1.Size = new Size(434, 323);
-            materialListView1.TabIndex = 0;
-            materialListView1.UseCompatibleStateImageBehavior = false;
-            materialListView1.View = View.Details;
             // 
             // lostBorderPanel4
             // 
@@ -461,7 +440,6 @@
             logoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             adminPanel.ResumeLayout(false);
-            userMngPanel.ResumeLayout(false);
             lostBorderPanel4.ResumeLayout(false);
             lostBorderPanel5.ResumeLayout(false);
             lostBorderPanel5.PerformLayout();
@@ -500,6 +478,5 @@
         private ReaLTaiizor.Controls.Button btnRestaurant;
         private ReaLTaiizor.Controls.Button btnUser;
         private ReaLTaiizor.Controls.LostBorderPanel userMngPanel;
-        private ReaLTaiizor.Controls.MaterialListView materialListView1;
     }
 }
