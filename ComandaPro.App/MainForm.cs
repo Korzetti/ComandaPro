@@ -1,7 +1,10 @@
-using ComandaPro.Domain.Entities;
-using ComandaPro.App.Others;
 using ComandaPro.App.Infra;
+using ComandaPro.App.Others;
+using ComandaPro.App.ViewModel;
+using ComandaPro.Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.VisualBasic.ApplicationServices;
+using System.Xml.Linq;
 
 namespace ComandaPro.App
 {
@@ -35,6 +38,8 @@ namespace ComandaPro.App
 
         }
 
+        #region Base Panel 
+
         private void Logout()
         {
             User = null;
@@ -51,6 +56,26 @@ namespace ComandaPro.App
         {
             Logout();
         }
+
+        #endregion
+
+        #region Admin Panel
+
+        private void mngPanel_Click(object sender, EventArgs e)
+        {
+            var button = sender as ReaLTaiizor.Controls.Button;
+
+            if(button.Name == "userMngPanel") 
+            {
+                userMngPanel.Visible = true;
+            }
+        }
+
+        #region User Management Panel
+
+        #endregion
+
+        #endregion
 
     }
 }

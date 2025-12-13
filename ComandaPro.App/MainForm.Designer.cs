@@ -39,7 +39,12 @@
             pictureBox1 = new PictureBox();
             crownLabel1 = new ReaLTaiizor.Controls.CrownLabel();
             adminPanel = new ReaLTaiizor.Controls.LostPanel();
+            userMngPanel = new ReaLTaiizor.Controls.LostBorderPanel();
+            materialListView1 = new ReaLTaiizor.Controls.MaterialListView();
             lostBorderPanel4 = new ReaLTaiizor.Controls.LostBorderPanel();
+            btnOrder = new ReaLTaiizor.Controls.Button();
+            btnRestaurant = new ReaLTaiizor.Controls.Button();
+            btnUser = new ReaLTaiizor.Controls.Button();
             lostBorderPanel5 = new ReaLTaiizor.Controls.LostBorderPanel();
             crownLabel7 = new ReaLTaiizor.Controls.CrownLabel();
             crownLabel3 = new ReaLTaiizor.Controls.CrownLabel();
@@ -56,6 +61,7 @@
             logoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             adminPanel.SuspendLayout();
+            userMngPanel.SuspendLayout();
             lostBorderPanel4.SuspendLayout();
             lostBorderPanel5.SuspendLayout();
             lostBorderPanel6.SuspendLayout();
@@ -196,6 +202,7 @@
             // adminPanel
             // 
             adminPanel.BackColor = Color.WhiteSmoke;
+            adminPanel.Controls.Add(userMngPanel);
             adminPanel.Controls.Add(lostBorderPanel4);
             adminPanel.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             adminPanel.ForeColor = Color.White;
@@ -207,10 +214,47 @@
             adminPanel.TabIndex = 1;
             adminPanel.Visible = false;
             // 
+            // userMngPanel
+            // 
+            userMngPanel.BackColor = Color.White;
+            userMngPanel.BorderColor = Color.Silver;
+            userMngPanel.Controls.Add(materialListView1);
+            userMngPanel.Dock = DockStyle.Right;
+            userMngPanel.Font = new Font("Segoe UI", 12F);
+            userMngPanel.ForeColor = Color.White;
+            userMngPanel.Location = new Point(219, 0);
+            userMngPanel.Name = "userMngPanel";
+            userMngPanel.Padding = new Padding(5);
+            userMngPanel.ShowText = true;
+            userMngPanel.Size = new Size(581, 451);
+            userMngPanel.TabIndex = 1;
+            userMngPanel.Text = "lostBorderPanel8";
+            // 
+            // materialListView1
+            // 
+            materialListView1.AutoSizeTable = false;
+            materialListView1.BackColor = Color.FromArgb(255, 255, 255);
+            materialListView1.BorderStyle = BorderStyle.None;
+            materialListView1.Depth = 0;
+            materialListView1.FullRowSelect = true;
+            materialListView1.Location = new Point(75, 44);
+            materialListView1.MinimumSize = new Size(200, 100);
+            materialListView1.MouseLocation = new Point(-1, -1);
+            materialListView1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            materialListView1.Name = "materialListView1";
+            materialListView1.OwnerDraw = true;
+            materialListView1.Size = new Size(434, 323);
+            materialListView1.TabIndex = 0;
+            materialListView1.UseCompatibleStateImageBehavior = false;
+            materialListView1.View = View.Details;
+            // 
             // lostBorderPanel4
             // 
             lostBorderPanel4.BackColor = Color.White;
             lostBorderPanel4.BorderColor = Color.Silver;
+            lostBorderPanel4.Controls.Add(btnOrder);
+            lostBorderPanel4.Controls.Add(btnRestaurant);
+            lostBorderPanel4.Controls.Add(btnUser);
             lostBorderPanel4.Controls.Add(lostBorderPanel5);
             lostBorderPanel4.Controls.Add(lostBorderPanel6);
             lostBorderPanel4.Font = new Font("Segoe UI", 12F);
@@ -221,6 +265,66 @@
             lostBorderPanel4.ShowText = true;
             lostBorderPanel4.Size = new Size(220, 450);
             lostBorderPanel4.TabIndex = 0;
+            // 
+            // btnOrder
+            // 
+            btnOrder.BackColor = Color.Transparent;
+            btnOrder.BorderColor = Color.FromArgb(64, 64, 64);
+            btnOrder.EnteredBorderColor = Color.Silver;
+            btnOrder.EnteredColor = Color.Silver;
+            btnOrder.Font = new Font("Microsoft Sans Serif", 12F);
+            btnOrder.Image = null;
+            btnOrder.ImageAlign = ContentAlignment.MiddleLeft;
+            btnOrder.InactiveColor = Color.DimGray;
+            btnOrder.Location = new Point(44, 235);
+            btnOrder.Name = "btnOrder";
+            btnOrder.PressedBorderColor = Color.FromArgb(234, 88, 12);
+            btnOrder.PressedColor = Color.FromArgb(234, 88, 12);
+            btnOrder.Size = new Size(120, 40);
+            btnOrder.TabIndex = 3;
+            btnOrder.Text = "Orders";
+            btnOrder.TextAlignment = StringAlignment.Center;
+            btnOrder.Click += mngPanel_Click;
+            // 
+            // btnRestaurant
+            // 
+            btnRestaurant.BackColor = Color.Transparent;
+            btnRestaurant.BorderColor = Color.FromArgb(64, 64, 64);
+            btnRestaurant.EnteredBorderColor = Color.Silver;
+            btnRestaurant.EnteredColor = Color.Silver;
+            btnRestaurant.Font = new Font("Microsoft Sans Serif", 12F);
+            btnRestaurant.Image = null;
+            btnRestaurant.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRestaurant.InactiveColor = Color.DimGray;
+            btnRestaurant.Location = new Point(44, 182);
+            btnRestaurant.Name = "btnRestaurant";
+            btnRestaurant.PressedBorderColor = Color.FromArgb(234, 88, 12);
+            btnRestaurant.PressedColor = Color.FromArgb(234, 88, 12);
+            btnRestaurant.Size = new Size(120, 40);
+            btnRestaurant.TabIndex = 2;
+            btnRestaurant.Text = "Restaurants";
+            btnRestaurant.TextAlignment = StringAlignment.Center;
+            btnRestaurant.Click += mngPanel_Click;
+            // 
+            // btnUser
+            // 
+            btnUser.BackColor = Color.Transparent;
+            btnUser.BorderColor = Color.FromArgb(64, 64, 64);
+            btnUser.EnteredBorderColor = Color.Silver;
+            btnUser.EnteredColor = Color.Silver;
+            btnUser.Font = new Font("Microsoft Sans Serif", 12F);
+            btnUser.Image = null;
+            btnUser.ImageAlign = ContentAlignment.MiddleLeft;
+            btnUser.InactiveColor = Color.DimGray;
+            btnUser.Location = new Point(44, 128);
+            btnUser.Name = "btnUser";
+            btnUser.PressedBorderColor = Color.FromArgb(234, 88, 12);
+            btnUser.PressedColor = Color.FromArgb(234, 88, 12);
+            btnUser.Size = new Size(120, 40);
+            btnUser.TabIndex = 1;
+            btnUser.Text = "Users";
+            btnUser.TextAlignment = StringAlignment.Center;
+            btnUser.Click += mngPanel_Click;
             // 
             // lostBorderPanel5
             // 
@@ -243,7 +347,7 @@
             crownLabel7.AutoSize = true;
             crownLabel7.Font = new Font("Georgia", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             crownLabel7.ForeColor = Color.Gray;
-            crownLabel7.Location = new Point(22, 42);
+            crownLabel7.Location = new Point(31, 50);
             crownLabel7.Name = "crownLabel7";
             crownLabel7.Size = new Size(151, 29);
             crownLabel7.TabIndex = 1;
@@ -357,6 +461,7 @@
             logoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             adminPanel.ResumeLayout(false);
+            userMngPanel.ResumeLayout(false);
             lostBorderPanel4.ResumeLayout(false);
             lostBorderPanel5.ResumeLayout(false);
             lostBorderPanel5.PerformLayout();
@@ -391,5 +496,10 @@
         private PictureBox pictureBox2;
         private ReaLTaiizor.Controls.CrownLabel crownLabel6;
         private ReaLTaiizor.Controls.CrownLabel crownLabel7;
+        private ReaLTaiizor.Controls.Button btnOrder;
+        private ReaLTaiizor.Controls.Button btnRestaurant;
+        private ReaLTaiizor.Controls.Button btnUser;
+        private ReaLTaiizor.Controls.LostBorderPanel userMngPanel;
+        private ReaLTaiizor.Controls.MaterialListView materialListView1;
     }
 }
