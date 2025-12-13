@@ -1,6 +1,5 @@
 ﻿using ComandaPro.Domain.Entities;
 using FluentValidation;
-using System.Net.Mail;
 
 namespace ComandaPro.Service.Validators
 {

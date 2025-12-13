@@ -7,9 +7,9 @@ namespace ComandaPro.Domain.Entities
 
         public enum Type
         {
-            Admin,
             Customer,
-            Restaurant
+            Restaurant,
+            Admin
         }
 
         public User()

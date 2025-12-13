@@ -56,7 +56,7 @@ namespace ComandaPro.App.Infra
             #region Forms
             services.AddTransient<Login, Login>();
             services.AddTransient<UserForm, UserForm>();
-
+            services.AddTransient<UserListForm, UserListForm>();
 
             #endregion
 

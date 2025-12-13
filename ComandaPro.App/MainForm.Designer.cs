@@ -216,16 +216,16 @@
             // 
             userMngPanel.BackColor = Color.White;
             userMngPanel.BorderColor = Color.Silver;
-            userMngPanel.Dock = DockStyle.Right;
             userMngPanel.Font = new Font("Segoe UI", 12F);
             userMngPanel.ForeColor = Color.White;
-            userMngPanel.Location = new Point(219, 0);
+            userMngPanel.Location = new Point(259, 12);
             userMngPanel.Name = "userMngPanel";
             userMngPanel.Padding = new Padding(5);
             userMngPanel.ShowText = true;
-            userMngPanel.Size = new Size(581, 451);
+            userMngPanel.Size = new Size(506, 422);
             userMngPanel.TabIndex = 1;
             userMngPanel.Text = "lostBorderPanel8";
+            userMngPanel.Visible = false;
             // 
             // lostBorderPanel4
             // 

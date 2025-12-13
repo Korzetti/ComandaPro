@@ -1,5 +1,6 @@
 using ComandaPro.App.Infra;
 using ComandaPro.App.Others;
+using ComandaPro.App.Register;
 using ComandaPro.App.ViewModel;
 using ComandaPro.Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
@@ -48,7 +49,7 @@ namespace ComandaPro.App
                     break;
 
                 case User.Type.Restaurant:
-                   // pnlRestaurant.Visible = true;
+                    // pnlRestaurant.Visible = true;
                     break;
 
                 case User.Type.Customer:
@@ -75,24 +76,44 @@ namespace ComandaPro.App
             Logout();
         }
 
-
-        #region Admin Panel
-
         private void mngPanel_Click(object sender, EventArgs e)
         {
             var button = sender as ReaLTaiizor.Controls.Button;
 
-            if(button.Name == "userMngPanel") 
+            if (button.Name == "btnUser")
             {
                 userMngPanel.Visible = true;
+                OpenPanelForm<UserListForm>(userMngPanel);
+            }
+            else if (button.Name == "btnRestaurant")
+            {
+                // Exemplo: AbrirFormNoPanel<RestaurantForm>(userMngPanel);
+            }
+            else if (button.Name == "btnOrder")
+            {
+                // Exemplo: AbrirFormNoPanel<OrderForm>(userMngPanel);
             }
         }
 
-        #region User Management Panel
+        private void OpenPanelForm<TFormulario>(Control targetPanel) where TFormulario : Form
+        {
+            if (targetPanel.Controls.Count > 0)
+                targetPanel.Controls[0].Dispose();
 
-        #endregion
+            var form = ConfigureDI.serviceProvider!.GetService<TFormulario>();
 
-        #endregion
+            if (form != null && !form.IsDisposed)
+            {
+                form.TopLevel = false;
+                form.FormBorderStyle = FormBorderStyle.None;
+                form.Dock = DockStyle.Fill;
+
+                targetPanel.Controls.Clear();
+                targetPanel.Controls.Add(form);
+
+                form.Show();
+            }
+        }
 
     }
 }
