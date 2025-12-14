@@ -4,11 +4,29 @@ using ComandaPro.App.Register;
 using ComandaPro.App.ViewModel;
 using ComandaPro.Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
+using System.Runtime.InteropServices;
 
 namespace ComandaPro.App
 {
     public partial class MainForm : Form
     {
+        #region draggable form
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wMsg, int wParam, int lParam);
+
+        private void MainForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, 0x112, 0xf012, 0);
+            }
+        }
+
+        #endregion
+
         public static User User { get; set; }
         public MainForm()
         {
@@ -37,7 +55,7 @@ namespace ComandaPro.App
         private void ConfigurePanels()
         {
             adminPanel.Visible = false;
-            //restaurantPanel.Visible = false;
+            restaurantPanel.Visible = false;
             //customerPanel.Visible = false;
 
             if (User.UserType == null) return;
@@ -49,7 +67,7 @@ namespace ComandaPro.App
                     break;
 
                 case User.Type.Restaurant:
-                    // pnlRestaurant.Visible = true;
+                    restaurantPanel.Visible = true;
                     break;
 
                 case User.Type.Customer:
@@ -66,6 +84,7 @@ namespace ComandaPro.App
         {
             User = null;
 
+            formPanel.Visible = false;
             this.Hide();
             LoadLogin();
             this.Show();
@@ -80,18 +99,14 @@ namespace ComandaPro.App
         {
             var button = sender as ReaLTaiizor.Controls.Button;
 
-            if (button.Name == "btnUser")
+            switch (button.Name)
             {
-                userMngPanel.Visible = true;
-                OpenPanelForm<UserListForm>(userMngPanel);
-            }
-            else if (button.Name == "btnRestaurant")
-            {
-                // Exemplo: AbrirFormNoPanel<RestaurantForm>(userMngPanel);
-            }
-            else if (button.Name == "btnOrder")
-            {
-                // Exemplo: AbrirFormNoPanel<OrderForm>(userMngPanel);
+                case "btnCategory":
+                    OpenPanelForm<CategoryForm>(formPanel);
+                    break;
+                case "btnUser":
+                    OpenPanelForm<UserListForm>(formPanel);
+                    break;
             }
         }
 
@@ -112,6 +127,7 @@ namespace ComandaPro.App
                 targetPanel.Controls.Add(form);
 
                 form.Show();
+                formPanel.Visible = true;
             }
         }
 

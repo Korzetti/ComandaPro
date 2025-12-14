@@ -3,11 +3,10 @@ using ComandaPro.App.ViewModel;
 using ComandaPro.Domain.Base;
 using ComandaPro.Domain.Entities;
 using ComandaPro.Service.Validators;
-using ReaLTaiizor.Controls;
 
 namespace ComandaPro.App.Register
 {
-    public partial class UserListForm : AdminBaseForm
+    public partial class UserListForm : BaseForm
     {
         private IBaseService<User> _userService;
         private List<UserViewModel>? users;

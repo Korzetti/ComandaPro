@@ -1,15 +1,17 @@
 ﻿using ReaLTaiizor.Controls;
+using System.Runtime.InteropServices;
 
 namespace ComandaPro.App.Base
 {
-    public partial class AdminBaseForm : Form
+    public partial class BaseForm : Form
     {
+  
         #region Variables
         protected bool IsEditMode = false;
         #endregion
 
         #region Constructor
-        public AdminBaseForm()
+        public BaseForm()
         {
             InitializeComponent();
         }
@@ -83,7 +85,7 @@ namespace ComandaPro.App.Base
         }
         #endregion
 
-        #region Virtual Methods (Para serem sobrescritos pelos filhos)
+        #region Virtual Methods 
         protected virtual void ClearFields()
         {
             IsEditMode = false;

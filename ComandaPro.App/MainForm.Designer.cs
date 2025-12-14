@@ -39,7 +39,6 @@
             pictureBox1 = new PictureBox();
             crownLabel1 = new ReaLTaiizor.Controls.CrownLabel();
             adminPanel = new ReaLTaiizor.Controls.LostPanel();
-            userMngPanel = new ReaLTaiizor.Controls.LostBorderPanel();
             lostBorderPanel4 = new ReaLTaiizor.Controls.LostBorderPanel();
             btnOrder = new ReaLTaiizor.Controls.Button();
             btnRestaurant = new ReaLTaiizor.Controls.Button();
@@ -53,6 +52,19 @@
             lostBorderPanel7 = new ReaLTaiizor.Controls.LostBorderPanel();
             pictureBox2 = new PictureBox();
             crownLabel6 = new ReaLTaiizor.Controls.CrownLabel();
+            formPanel = new ReaLTaiizor.Controls.LostBorderPanel();
+            restaurantPanel = new ReaLTaiizor.Controls.LostPanel();
+            lostBorderPanel8 = new ReaLTaiizor.Controls.LostBorderPanel();
+            btnCategory = new ReaLTaiizor.Controls.Button();
+            lostBorderPanel9 = new ReaLTaiizor.Controls.LostBorderPanel();
+            crownLabel12 = new ReaLTaiizor.Controls.CrownLabel();
+            crownLabel8 = new ReaLTaiizor.Controls.CrownLabel();
+            lostBorderPanel10 = new ReaLTaiizor.Controls.LostBorderPanel();
+            crownLabel9 = new ReaLTaiizor.Controls.CrownLabel();
+            crownLabel10 = new ReaLTaiizor.Controls.CrownLabel();
+            lostBorderPanel11 = new ReaLTaiizor.Controls.LostBorderPanel();
+            pictureBox3 = new PictureBox();
+            crownLabel11 = new ReaLTaiizor.Controls.CrownLabel();
             basePanel.SuspendLayout();
             lostBorderPanel1.SuspendLayout();
             lostBorderPanel3.SuspendLayout();
@@ -65,6 +77,12 @@
             lostBorderPanel6.SuspendLayout();
             lostBorderPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            restaurantPanel.SuspendLayout();
+            lostBorderPanel8.SuspendLayout();
+            lostBorderPanel9.SuspendLayout();
+            lostBorderPanel10.SuspendLayout();
+            lostBorderPanel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // basePanel
@@ -200,7 +218,6 @@
             // adminPanel
             // 
             adminPanel.BackColor = Color.WhiteSmoke;
-            adminPanel.Controls.Add(userMngPanel);
             adminPanel.Controls.Add(lostBorderPanel4);
             adminPanel.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             adminPanel.ForeColor = Color.White;
@@ -211,21 +228,6 @@
             adminPanel.Size = new Size(800, 451);
             adminPanel.TabIndex = 1;
             adminPanel.Visible = false;
-            // 
-            // userMngPanel
-            // 
-            userMngPanel.BackColor = Color.White;
-            userMngPanel.BorderColor = Color.Silver;
-            userMngPanel.Font = new Font("Segoe UI", 12F);
-            userMngPanel.ForeColor = Color.White;
-            userMngPanel.Location = new Point(259, 12);
-            userMngPanel.Name = "userMngPanel";
-            userMngPanel.Padding = new Padding(5);
-            userMngPanel.ShowText = true;
-            userMngPanel.Size = new Size(506, 422);
-            userMngPanel.TabIndex = 1;
-            userMngPanel.Text = "lostBorderPanel8";
-            userMngPanel.Visible = false;
             // 
             // lostBorderPanel4
             // 
@@ -418,18 +420,197 @@
             crownLabel6.Text = "Logout";
             crownLabel6.Click += logoutPanel_Click;
             // 
+            // formPanel
+            // 
+            formPanel.BackColor = Color.White;
+            formPanel.BorderColor = Color.Silver;
+            formPanel.Font = new Font("Segoe UI", 12F);
+            formPanel.ForeColor = Color.White;
+            formPanel.Location = new Point(257, 11);
+            formPanel.Name = "formPanel";
+            formPanel.Padding = new Padding(5);
+            formPanel.ShowText = true;
+            formPanel.Size = new Size(506, 422);
+            formPanel.TabIndex = 1;
+            formPanel.Text = "lostBorderPanel8";
+            formPanel.Visible = false;
+            // 
+            // restaurantPanel
+            // 
+            restaurantPanel.BackColor = Color.WhiteSmoke;
+            restaurantPanel.Controls.Add(lostBorderPanel8);
+            restaurantPanel.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            restaurantPanel.ForeColor = Color.White;
+            restaurantPanel.Location = new Point(0, 0);
+            restaurantPanel.Name = "restaurantPanel";
+            restaurantPanel.Padding = new Padding(5);
+            restaurantPanel.ShowText = true;
+            restaurantPanel.Size = new Size(800, 451);
+            restaurantPanel.TabIndex = 1;
+            restaurantPanel.Visible = false;
+            // 
+            // lostBorderPanel8
+            // 
+            lostBorderPanel8.BackColor = Color.White;
+            lostBorderPanel8.BorderColor = Color.Silver;
+            lostBorderPanel8.Controls.Add(btnCategory);
+            lostBorderPanel8.Controls.Add(lostBorderPanel9);
+            lostBorderPanel8.Controls.Add(lostBorderPanel10);
+            lostBorderPanel8.Font = new Font("Segoe UI", 12F);
+            lostBorderPanel8.ForeColor = Color.White;
+            lostBorderPanel8.Location = new Point(0, 0);
+            lostBorderPanel8.Name = "lostBorderPanel8";
+            lostBorderPanel8.Padding = new Padding(5);
+            lostBorderPanel8.ShowText = true;
+            lostBorderPanel8.Size = new Size(220, 450);
+            lostBorderPanel8.TabIndex = 0;
+            // 
+            // btnCategory
+            // 
+            btnCategory.BackColor = Color.Transparent;
+            btnCategory.BorderColor = Color.FromArgb(64, 64, 64);
+            btnCategory.EnteredBorderColor = Color.Silver;
+            btnCategory.EnteredColor = Color.Silver;
+            btnCategory.Font = new Font("Microsoft Sans Serif", 12F);
+            btnCategory.Image = null;
+            btnCategory.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCategory.InactiveColor = Color.DimGray;
+            btnCategory.Location = new Point(50, 136);
+            btnCategory.Name = "btnCategory";
+            btnCategory.PressedBorderColor = Color.FromArgb(234, 88, 12);
+            btnCategory.PressedColor = Color.FromArgb(234, 88, 12);
+            btnCategory.Size = new Size(120, 40);
+            btnCategory.TabIndex = 4;
+            btnCategory.Text = "Categories";
+            btnCategory.TextAlignment = StringAlignment.Center;
+            btnCategory.Click += mngPanel_Click;
+            // 
+            // lostBorderPanel9
+            // 
+            lostBorderPanel9.BackColor = Color.White;
+            lostBorderPanel9.BorderColor = Color.Silver;
+            lostBorderPanel9.Controls.Add(crownLabel12);
+            lostBorderPanel9.Controls.Add(crownLabel8);
+            lostBorderPanel9.Font = new Font("Segoe UI", 12F);
+            lostBorderPanel9.ForeColor = Color.White;
+            lostBorderPanel9.Location = new Point(-9, 0);
+            lostBorderPanel9.Name = "lostBorderPanel9";
+            lostBorderPanel9.Padding = new Padding(5);
+            lostBorderPanel9.ShowText = true;
+            lostBorderPanel9.Size = new Size(229, 111);
+            lostBorderPanel9.TabIndex = 1;
+            lostBorderPanel9.Text = "lostBorderPanel9";
+            // 
+            // crownLabel12
+            // 
+            crownLabel12.AutoSize = true;
+            crownLabel12.Font = new Font("Georgia", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            crownLabel12.ForeColor = Color.Gray;
+            crownLabel12.Location = new Point(22, 50);
+            crownLabel12.Name = "crownLabel12";
+            crownLabel12.Size = new Size(196, 29);
+            crownLabel12.TabIndex = 2;
+            crownLabel12.Text = "Restaurant Panel";
+            // 
+            // crownLabel8
+            // 
+            crownLabel8.AutoSize = true;
+            crownLabel8.Font = new Font("Georgia", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            crownLabel8.ForeColor = Color.Black;
+            crownLabel8.Location = new Point(21, 10);
+            crownLabel8.Name = "crownLabel8";
+            crownLabel8.Size = new Size(152, 29);
+            crownLabel8.TabIndex = 1;
+            crownLabel8.Text = "ComandaPro";
+            // 
+            // lostBorderPanel10
+            // 
+            lostBorderPanel10.BackColor = Color.White;
+            lostBorderPanel10.BorderColor = Color.Silver;
+            lostBorderPanel10.Controls.Add(crownLabel9);
+            lostBorderPanel10.Controls.Add(crownLabel10);
+            lostBorderPanel10.Controls.Add(lostBorderPanel11);
+            lostBorderPanel10.Font = new Font("Segoe UI", 12F);
+            lostBorderPanel10.ForeColor = Color.White;
+            lostBorderPanel10.Location = new Point(0, 308);
+            lostBorderPanel10.Name = "lostBorderPanel10";
+            lostBorderPanel10.Padding = new Padding(5);
+            lostBorderPanel10.ShowText = true;
+            lostBorderPanel10.Size = new Size(220, 156);
+            lostBorderPanel10.TabIndex = 1;
+            // 
+            // crownLabel9
+            // 
+            crownLabel9.AutoSize = true;
+            crownLabel9.Font = new Font("Georgia", 9.75F);
+            crownLabel9.ForeColor = Color.Silver;
+            crownLabel9.Location = new Point(12, 44);
+            crownLabel9.Name = "crownLabel9";
+            crownLabel9.Size = new Size(0, 16);
+            crownLabel9.TabIndex = 2;
+            // 
+            // crownLabel10
+            // 
+            crownLabel10.AutoSize = true;
+            crownLabel10.Font = new Font("Georgia", 9.75F);
+            crownLabel10.ForeColor = Color.Black;
+            crownLabel10.Location = new Point(12, 17);
+            crownLabel10.Name = "crownLabel10";
+            crownLabel10.Size = new Size(0, 16);
+            crownLabel10.TabIndex = 1;
+            // 
+            // lostBorderPanel11
+            // 
+            lostBorderPanel11.BackColor = Color.White;
+            lostBorderPanel11.BorderColor = Color.Transparent;
+            lostBorderPanel11.Controls.Add(pictureBox3);
+            lostBorderPanel11.Controls.Add(crownLabel11);
+            lostBorderPanel11.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lostBorderPanel11.ForeColor = Color.Black;
+            lostBorderPanel11.Location = new Point(12, 94);
+            lostBorderPanel11.Name = "lostBorderPanel11";
+            lostBorderPanel11.Padding = new Padding(5);
+            lostBorderPanel11.ShowText = true;
+            lostBorderPanel11.Size = new Size(183, 37);
+            lostBorderPanel11.TabIndex = 1;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.logout;
+            pictureBox3.Location = new Point(10, 10);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(23, 18);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 1;
+            pictureBox3.TabStop = false;
+            // 
+            // crownLabel11
+            // 
+            crownLabel11.AutoSize = true;
+            crownLabel11.ForeColor = Color.Black;
+            crownLabel11.Image = Properties.Resources.logout;
+            crownLabel11.Location = new Point(38, 9);
+            crownLabel11.Name = "crownLabel11";
+            crownLabel11.Size = new Size(57, 18);
+            crownLabel11.TabIndex = 1;
+            crownLabel11.Text = "Logout";
+            crownLabel11.Click += logoutPanel_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(234, 88, 12);
             ClientSize = new Size(800, 450);
+            Controls.Add(formPanel);
+            Controls.Add(restaurantPanel);
             Controls.Add(adminPanel);
             Controls.Add(basePanel);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            MouseDown += MainForm_MouseDown;
             basePanel.ResumeLayout(false);
             lostBorderPanel1.ResumeLayout(false);
             lostBorderPanel3.ResumeLayout(false);
@@ -448,6 +629,15 @@
             lostBorderPanel7.ResumeLayout(false);
             lostBorderPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            restaurantPanel.ResumeLayout(false);
+            lostBorderPanel8.ResumeLayout(false);
+            lostBorderPanel9.ResumeLayout(false);
+            lostBorderPanel9.PerformLayout();
+            lostBorderPanel10.ResumeLayout(false);
+            lostBorderPanel10.PerformLayout();
+            lostBorderPanel11.ResumeLayout(false);
+            lostBorderPanel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 
@@ -477,6 +667,18 @@
         private ReaLTaiizor.Controls.Button btnOrder;
         private ReaLTaiizor.Controls.Button btnRestaurant;
         private ReaLTaiizor.Controls.Button btnUser;
-        private ReaLTaiizor.Controls.LostBorderPanel userMngPanel;
+        private ReaLTaiizor.Controls.LostBorderPanel formPanel;
+        private ReaLTaiizor.Controls.LostPanel restaurantPanel;
+        private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel8;
+        private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel9;
+        private ReaLTaiizor.Controls.CrownLabel crownLabel8;
+        private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel10;
+        private ReaLTaiizor.Controls.CrownLabel crownLabel9;
+        private ReaLTaiizor.Controls.CrownLabel crownLabel10;
+        private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel11;
+        private PictureBox pictureBox3;
+        private ReaLTaiizor.Controls.CrownLabel crownLabel11;
+        private ReaLTaiizor.Controls.CrownLabel crownLabel12;
+        private ReaLTaiizor.Controls.Button btnCategory;
     }
 }

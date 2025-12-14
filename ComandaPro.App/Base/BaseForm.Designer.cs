@@ -1,6 +1,6 @@
 ﻿namespace ComandaPro.App.Base
 {
-    partial class AdminBaseForm
+    partial class BaseForm
     {
         /// <summary>
         /// Required designer variable.
