@@ -136,15 +136,15 @@ namespace ComandaPro.App.Others.CustomerForms
             {
                 var dataToShow = _cart.Select(item => new
                 {
-                    Product = item.Product.Name, 
+                    Product = item.Product.Name,
                     Qnt = item.Quantity,
                     Price = item.UnitPrice,
                     Total = item.Quantity * item.UnitPrice
                 }).ToList();
 
-                dataGridCart.DataSource = null; 
+                dataGridCart.DataSource = null;
                 dataGridCart.DataSource = dataToShow;
-                dataGridCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;   
+                dataGridCart.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridCart.ForeColor = Color.Black;
             }
             catch (Exception ex)
@@ -183,8 +183,7 @@ namespace ComandaPro.App.Others.CustomerForms
                     _itemOrderService.Add<ItemOrder, ItemOrder, ItemOrderValidator>(item);
                 }
                 MessageBox.Show("Order placed successfully!", "Comanda Pro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                _cart.Clear();
-                UpdateCartGrid();
+                ClearCart();
             }
             catch (Exception ex)
             {
@@ -196,6 +195,17 @@ namespace ComandaPro.App.Others.CustomerForms
 
                 MessageBox.Show($"Error: {ex.Message}", "Comanda Pro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }    
+        }
+
+        private void ClearCart()
+        {
+            _cart.Clear();
+            UpdateCartGrid();
+        }
+
+        private void btnClearCart_Click(object sender, EventArgs e)
+        {
+            ClearCart();
+        }
     }
 }

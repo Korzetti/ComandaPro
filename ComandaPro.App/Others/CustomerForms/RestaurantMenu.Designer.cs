@@ -33,17 +33,21 @@
             btnSelect = new ReaLTaiizor.Controls.Button();
             dataGridViewList = new DataGridView();
             tabPageRestaurantMenu = new TabPage();
+            dataGridCart = new DataGridView();
             finishOrderBtn = new ReaLTaiizor.Controls.Button();
             dataGridProducts = new DataGridView();
             btnSelectProduct = new ReaLTaiizor.Controls.Button();
             btnCancel = new ReaLTaiizor.Controls.Button();
-            dataGridCart = new DataGridView();
+            pictureBox1 = new PictureBox();
+            crownLabel1 = new ReaLTaiizor.Controls.CrownLabel();
+            btnClearCart = new ReaLTaiizor.Controls.Button();
             tabControlMenu.SuspendLayout();
             tabPageRestaurantSel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewList).BeginInit();
             tabPageRestaurantMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridProducts).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridCart).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridProducts).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // tabControlMenu
@@ -102,6 +106,9 @@
             // 
             // tabPageRestaurantMenu
             // 
+            tabPageRestaurantMenu.Controls.Add(btnClearCart);
+            tabPageRestaurantMenu.Controls.Add(crownLabel1);
+            tabPageRestaurantMenu.Controls.Add(pictureBox1);
             tabPageRestaurantMenu.Controls.Add(dataGridCart);
             tabPageRestaurantMenu.Controls.Add(finishOrderBtn);
             tabPageRestaurantMenu.Controls.Add(dataGridProducts);
@@ -115,6 +122,14 @@
             tabPageRestaurantMenu.Text = "tabPage2";
             tabPageRestaurantMenu.UseVisualStyleBackColor = true;
             // 
+            // dataGridCart
+            // 
+            dataGridCart.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridCart.Location = new Point(90, 488);
+            dataGridCart.Name = "dataGridCart";
+            dataGridCart.Size = new Size(330, 246);
+            dataGridCart.TabIndex = 12;
+            // 
             // finishOrderBtn
             // 
             finishOrderBtn.BackColor = Color.Transparent;
@@ -125,7 +140,7 @@
             finishOrderBtn.Image = null;
             finishOrderBtn.ImageAlign = ContentAlignment.MiddleLeft;
             finishOrderBtn.InactiveColor = Color.FromArgb(255, 128, 128);
-            finishOrderBtn.Location = new Point(1005, 694);
+            finishOrderBtn.Location = new Point(441, 694);
             finishOrderBtn.Name = "finishOrderBtn";
             finishOrderBtn.PressedBorderColor = Color.FromArgb(165, 37, 37);
             finishOrderBtn.PressedColor = Color.FromArgb(165, 37, 37);
@@ -173,23 +188,56 @@
             btnCancel.Image = null;
             btnCancel.ImageAlign = ContentAlignment.MiddleLeft;
             btnCancel.InactiveColor = Color.FromArgb(32, 34, 37);
-            btnCancel.Location = new Point(859, 694);
+            btnCancel.Location = new Point(1005, 694);
             btnCancel.Name = "btnCancel";
             btnCancel.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnCancel.PressedColor = Color.FromArgb(165, 37, 37);
             btnCancel.Size = new Size(120, 40);
             btnCancel.TabIndex = 7;
-            btnCancel.Text = "Cancel";
+            btnCancel.Text = "Return";
             btnCancel.TextAlignment = StringAlignment.Center;
             btnCancel.Click += btnCancel_Click;
             // 
-            // dataGridCart
+            // pictureBox1
             // 
-            dataGridCart.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridCart.Location = new Point(90, 432);
-            dataGridCart.Name = "dataGridCart";
-            dataGridCart.Size = new Size(330, 246);
-            dataGridCart.TabIndex = 12;
+            pictureBox1.Image = Properties.Resources.shopping_cart;
+            pictureBox1.Location = new Point(168, 432);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(59, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 13;
+            pictureBox1.TabStop = false;
+            // 
+            // crownLabel1
+            // 
+            crownLabel1.AutoSize = true;
+            crownLabel1.Font = new Font("Georgia", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            crownLabel1.ForeColor = Color.Black;
+            crownLabel1.Location = new Point(233, 443);
+            crownLabel1.Name = "crownLabel1";
+            crownLabel1.Size = new Size(98, 29);
+            crownLabel1.TabIndex = 14;
+            crownLabel1.Text = "My Cart";
+            // 
+            // btnClearCart
+            // 
+            btnClearCart.BackColor = Color.Transparent;
+            btnClearCart.BorderColor = Color.FromArgb(32, 34, 37);
+            btnClearCart.EnteredBorderColor = Color.FromArgb(165, 37, 37);
+            btnClearCart.EnteredColor = Color.FromArgb(32, 34, 37);
+            btnClearCart.Font = new Font("Microsoft Sans Serif", 12F);
+            btnClearCart.Image = null;
+            btnClearCart.ImageAlign = ContentAlignment.MiddleLeft;
+            btnClearCart.InactiveColor = Color.Red;
+            btnClearCart.Location = new Point(441, 632);
+            btnClearCart.Name = "btnClearCart";
+            btnClearCart.PressedBorderColor = Color.FromArgb(165, 37, 37);
+            btnClearCart.PressedColor = Color.FromArgb(165, 37, 37);
+            btnClearCart.Size = new Size(120, 40);
+            btnClearCart.TabIndex = 15;
+            btnClearCart.Text = "Clear Cart";
+            btnClearCart.TextAlignment = StringAlignment.Center;
+            btnClearCart.Click += btnClearCart_Click;
             // 
             // RestaurantMenu
             // 
@@ -204,8 +252,10 @@
             tabPageRestaurantSel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewList).EndInit();
             tabPageRestaurantMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridProducts).EndInit();
+            tabPageRestaurantMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridCart).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridProducts).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -221,5 +271,8 @@
         private DataGridView dataGridProducts;
         public ReaLTaiizor.Controls.Button finishOrderBtn;
         private DataGridView dataGridCart;
+        public ReaLTaiizor.Controls.Button btnClearCart;
+        private ReaLTaiizor.Controls.CrownLabel crownLabel1;
+        private PictureBox pictureBox1;
     }
 }
