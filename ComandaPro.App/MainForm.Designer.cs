@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             basePanel = new ReaLTaiizor.Controls.LostPanel();
             lostBorderPanel1 = new ReaLTaiizor.Controls.LostBorderPanel();
             lostBorderPanel3 = new ReaLTaiizor.Controls.LostBorderPanel();
@@ -887,9 +888,10 @@
             Controls.Add(customerPanel);
             Controls.Add(basePanel);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "ComandaPro - Menu";
             WindowState = FormWindowState.Maximized;
             basePanel.ResumeLayout(false);
             lostBorderPanel1.ResumeLayout(false);

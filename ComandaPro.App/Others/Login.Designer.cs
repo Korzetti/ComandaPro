@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             lostPanel1 = new ReaLTaiizor.Controls.LostPanel();
             registerLbl = new ReaLTaiizor.Controls.CrownLabel();
             crownLabel2 = new ReaLTaiizor.Controls.CrownLabel();
@@ -197,8 +198,10 @@
             Controls.Add(lostPanel1);
             Controls.Add(cancelPb);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
+            Text = "ComandaPro - Login";
             MouseDown += Login_MouseDown;
             lostPanel1.ResumeLayout(false);
             lostPanel1.PerformLayout();

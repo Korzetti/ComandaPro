@@ -123,7 +123,7 @@ namespace ComandaPro.App.Others
                 var user = new User
                 {
                     Name = "System Admin",
-                    Password = "admin",
+                    Password = "@Admin12",
                     UserType = User.Type.Admin,
                     Address = "Admin Address",
                     Document = "0000000000",

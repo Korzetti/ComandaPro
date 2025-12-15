@@ -21,8 +21,14 @@ namespace ComandaPro.Service.Validators
                 .Matches(@"^\d+$").WithMessage("Telephone must contain only numbers!")
                 .Length(11).WithMessage("Please insert a valid phone number!");
             RuleFor(p => p.Password)
-                .NotEmpty().WithMessage("Password cannot be empty!")
-                .MaximumLength(16).WithMessage("Password length can't be bigger than 16 characters!");
+            .MinimumLength(8).WithMessage("Your password length must be at least 8.")
+            .MaximumLength(16).WithMessage("Your password length must not exceed 16.")
+            .Matches(@"[A-Z]+").WithMessage("Your password must contain at least one uppercase letter.")
+            .Matches(@"[a-z]+").WithMessage("Your password must contain at least one lowercase letter.")
+            .Matches(@"[0-9]+").WithMessage("Your password must contain at least one number.")
+            .Matches(@"[\@\!\?\*\.]+").WithMessage("Your password must contain at least one (!? *.).")
+            .NotEmpty().WithMessage("Please enter the password.")
+            .NotNull().WithMessage("Please enter the password.");
 
         }
 
