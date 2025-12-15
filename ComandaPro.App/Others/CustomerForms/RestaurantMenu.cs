@@ -1,4 +1,5 @@
 ﻿using ComandaPro.App.Infra;
+using ComandaPro.App.Register;
 using ComandaPro.App.ViewModel;
 using ComandaPro.Domain.Base;
 using ComandaPro.Domain.Entities;
@@ -161,8 +162,6 @@ namespace ComandaPro.App.Others.CustomerForms
                 return;
             }
 
-            Order savedOrder = null;
-
             try
             {
                 var newOrder = new Order
@@ -173,17 +172,30 @@ namespace ComandaPro.App.Others.CustomerForms
                     TotalValue = _cart.Sum(i => i.UnitPrice * i.Quantity)
                 };
 
-                savedOrder = _orderService.Add<Order, Order, OrderValidator>(newOrder);
-
-                foreach (var item in _cart)
+                var savedOrder = _orderService.Add<Order, Order, OrderValidator>(newOrder);
+                
+                var formPayment = ConfigureDI.serviceProvider.GetService<PaymentForm>();
+                formPayment.savedOrder = savedOrder;
+                
+                if(formPayment.ShowDialog() == DialogResult.OK)
                 {
-                    item.OrderId = savedOrder.Id;
-                    item.Order = null;
-                    item.Product = null;
-                    _itemOrderService.Add<ItemOrder, ItemOrder, ItemOrderValidator>(item);
+                    foreach (var item in _cart)
+                    {
+                        item.OrderId = savedOrder.Id;
+                        item.Order = null;
+                        item.Product = null;
+                        _itemOrderService.Add<ItemOrder, ItemOrder, ItemOrderValidator>(item);
+                    }
+                    MessageBox.Show("Order placed successfully!", "Comanda Pro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearCart();
                 }
-                MessageBox.Show("Order placed successfully!", "Comanda Pro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClearCart();
+                else
+                {
+                    if (savedOrder != null && savedOrder.Id > 0)
+                    {
+                        _orderService.Delete(savedOrder.Id);
+                    }
+                }          
             }
             catch (Exception ex)
             {

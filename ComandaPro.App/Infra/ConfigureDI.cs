@@ -63,6 +63,7 @@ namespace ComandaPro.App.Infra
             services.AddTransient<RestaurantMenu, RestaurantMenu>();
             services.AddTransient<Quantity, Quantity>();
             services.AddTransient<ClientOrder, ClientOrder>();
+            services.AddTransient<PaymentForm, PaymentForm>();
 
             #endregion
 

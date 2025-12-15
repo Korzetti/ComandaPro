@@ -33,21 +33,21 @@
             btnSelect = new ReaLTaiizor.Controls.Button();
             dataGridViewList = new DataGridView();
             tabPageRestaurantMenu = new TabPage();
+            btnClearCart = new ReaLTaiizor.Controls.Button();
+            crownLabel1 = new ReaLTaiizor.Controls.CrownLabel();
+            pictureBox1 = new PictureBox();
             dataGridCart = new DataGridView();
             finishOrderBtn = new ReaLTaiizor.Controls.Button();
             dataGridProducts = new DataGridView();
             btnSelectProduct = new ReaLTaiizor.Controls.Button();
             btnCancel = new ReaLTaiizor.Controls.Button();
-            pictureBox1 = new PictureBox();
-            crownLabel1 = new ReaLTaiizor.Controls.CrownLabel();
-            btnClearCart = new ReaLTaiizor.Controls.Button();
             tabControlMenu.SuspendLayout();
             tabPageRestaurantSel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewList).BeginInit();
             tabPageRestaurantMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridCart).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridProducts).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // tabControlMenu
@@ -121,6 +121,47 @@
             tabPageRestaurantMenu.TabIndex = 1;
             tabPageRestaurantMenu.Text = "tabPage2";
             tabPageRestaurantMenu.UseVisualStyleBackColor = true;
+            // 
+            // btnClearCart
+            // 
+            btnClearCart.BackColor = Color.Transparent;
+            btnClearCart.BorderColor = Color.FromArgb(32, 34, 37);
+            btnClearCart.EnteredBorderColor = Color.FromArgb(165, 37, 37);
+            btnClearCart.EnteredColor = Color.FromArgb(32, 34, 37);
+            btnClearCart.Font = new Font("Microsoft Sans Serif", 12F);
+            btnClearCart.Image = null;
+            btnClearCart.ImageAlign = ContentAlignment.MiddleLeft;
+            btnClearCart.InactiveColor = Color.Red;
+            btnClearCart.Location = new Point(441, 632);
+            btnClearCart.Name = "btnClearCart";
+            btnClearCart.PressedBorderColor = Color.FromArgb(165, 37, 37);
+            btnClearCart.PressedColor = Color.FromArgb(165, 37, 37);
+            btnClearCart.Size = new Size(120, 40);
+            btnClearCart.TabIndex = 15;
+            btnClearCart.Text = "Clear Cart";
+            btnClearCart.TextAlignment = StringAlignment.Center;
+            btnClearCart.Click += btnClearCart_Click;
+            // 
+            // crownLabel1
+            // 
+            crownLabel1.AutoSize = true;
+            crownLabel1.Font = new Font("Georgia", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            crownLabel1.ForeColor = Color.Black;
+            crownLabel1.Location = new Point(233, 443);
+            crownLabel1.Name = "crownLabel1";
+            crownLabel1.Size = new Size(98, 29);
+            crownLabel1.TabIndex = 14;
+            crownLabel1.Text = "My Cart";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.shopping_cart;
+            pictureBox1.Location = new Point(168, 432);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(59, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 13;
+            pictureBox1.TabStop = false;
             // 
             // dataGridCart
             // 
@@ -198,47 +239,6 @@
             btnCancel.TextAlignment = StringAlignment.Center;
             btnCancel.Click += btnCancel_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.shopping_cart;
-            pictureBox1.Location = new Point(168, 432);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(59, 50);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 13;
-            pictureBox1.TabStop = false;
-            // 
-            // crownLabel1
-            // 
-            crownLabel1.AutoSize = true;
-            crownLabel1.Font = new Font("Georgia", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            crownLabel1.ForeColor = Color.Black;
-            crownLabel1.Location = new Point(233, 443);
-            crownLabel1.Name = "crownLabel1";
-            crownLabel1.Size = new Size(98, 29);
-            crownLabel1.TabIndex = 14;
-            crownLabel1.Text = "My Cart";
-            // 
-            // btnClearCart
-            // 
-            btnClearCart.BackColor = Color.Transparent;
-            btnClearCart.BorderColor = Color.FromArgb(32, 34, 37);
-            btnClearCart.EnteredBorderColor = Color.FromArgb(165, 37, 37);
-            btnClearCart.EnteredColor = Color.FromArgb(32, 34, 37);
-            btnClearCart.Font = new Font("Microsoft Sans Serif", 12F);
-            btnClearCart.Image = null;
-            btnClearCart.ImageAlign = ContentAlignment.MiddleLeft;
-            btnClearCart.InactiveColor = Color.Red;
-            btnClearCart.Location = new Point(441, 632);
-            btnClearCart.Name = "btnClearCart";
-            btnClearCart.PressedBorderColor = Color.FromArgb(165, 37, 37);
-            btnClearCart.PressedColor = Color.FromArgb(165, 37, 37);
-            btnClearCart.Size = new Size(120, 40);
-            btnClearCart.TabIndex = 15;
-            btnClearCart.Text = "Clear Cart";
-            btnClearCart.TextAlignment = StringAlignment.Center;
-            btnClearCart.Click += btnClearCart_Click;
-            // 
             // RestaurantMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -253,9 +253,9 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewList).EndInit();
             tabPageRestaurantMenu.ResumeLayout(false);
             tabPageRestaurantMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridCart).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridProducts).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

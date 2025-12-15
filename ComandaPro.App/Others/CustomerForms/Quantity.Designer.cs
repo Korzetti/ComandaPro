@@ -120,7 +120,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDarkDark;
+            BackColor = Color.DarkGray;
             ClientSize = new Size(332, 228);
             Controls.Add(lostBorderPanel1);
             Controls.Add(carrinhoBtn);
