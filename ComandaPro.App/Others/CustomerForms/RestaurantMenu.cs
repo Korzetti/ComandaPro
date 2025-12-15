@@ -162,6 +162,8 @@ namespace ComandaPro.App.Others.CustomerForms
                 return;
             }
 
+            Order savedOrder = null;
+
             try
             {
                 var newOrder = new Order
@@ -172,7 +174,7 @@ namespace ComandaPro.App.Others.CustomerForms
                     TotalValue = _cart.Sum(i => i.UnitPrice * i.Quantity)
                 };
 
-                var savedOrder = _orderService.Add<Order, Order, OrderValidator>(newOrder);
+                savedOrder = _orderService.Add<Order, Order, OrderValidator>(newOrder);
                 
                 var formPayment = ConfigureDI.serviceProvider.GetService<PaymentForm>();
                 formPayment.savedOrder = savedOrder;

@@ -11,6 +11,7 @@ using ComandaPro.Service.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging.Abstractions;
+using ComandaPro.App.Others.RestaurantForms;
 
 namespace ComandaPro.App.Infra
 {
@@ -64,6 +65,8 @@ namespace ComandaPro.App.Infra
             services.AddTransient<Quantity, Quantity>();
             services.AddTransient<ClientOrder, ClientOrder>();
             services.AddTransient<PaymentForm, PaymentForm>();
+            services.AddTransient<RestaurantOrders, RestaurantOrders>();
+            services.AddTransient<OrderForm, OrderForm>();
 
             #endregion
 

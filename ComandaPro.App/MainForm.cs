@@ -1,33 +1,15 @@
 using ComandaPro.App.Infra;
 using ComandaPro.App.Others;
 using ComandaPro.App.Others.CustomerForms;
+using ComandaPro.App.Others.RestaurantForms;
 using ComandaPro.App.Register;
-using ComandaPro.App.ViewModel;
 using ComandaPro.Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
-using System.Runtime.InteropServices;
 
 namespace ComandaPro.App
 {
     public partial class MainForm : Form
     {
-        #region draggable form
-        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.dll", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hwnd, int wMsg, int wParam, int lParam);
-
-        private void MainForm_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(this.Handle, 0x112, 0xf012, 0);
-            }
-        }
-
-        #endregion
-
         public static User User { get; set; }
         public MainForm()
         {
@@ -108,8 +90,14 @@ namespace ComandaPro.App
                 case "btnProduct":
                     OpenPanelForm<ProductForm>(formPanel);
                     break;
+                case "btnViewOrders":
+                    OpenPanelForm<RestaurantOrders>(formPanel);
+                    break;
                 case "btnUser":
                     OpenPanelForm<UserListForm>(formPanel);
+                    break;
+                case "btnOrder":
+                    OpenPanelForm<OrderForm>(formPanel);
                     break;
                 case "btnRestaurants":
                     OpenPanelForm<RestaurantMenu>(formPanel);
@@ -118,6 +106,16 @@ namespace ComandaPro.App
                     OpenPanelForm<ClientOrder>(formPanel);
                     break;
             }
+        }
+
+        private void minimizePb_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void closePb_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void OpenPanelForm<TFormulario>(Control targetPanel) where TFormulario : Form
