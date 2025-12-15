@@ -7,9 +7,9 @@ namespace ComandaPro.Service.Validators
     {
         public ItemOrderValidator()
         {
-            RuleFor(or => or.Order)
+            RuleFor(or => or.OrderId)
                 .NotEmpty().WithMessage("Order must not be empty!");
-            RuleFor(prod => prod.Product)
+            RuleFor(prod => prod.ProductId)
                 .NotEmpty().WithMessage("Product must not be empty!");
             RuleFor(qnt => qnt.Quantity)
                 .GreaterThan(0).WithMessage("Quantity must be greater than 0!")

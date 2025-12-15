@@ -1,7 +1,6 @@
 ﻿using ComandaPro.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Security.Cryptography.X509Certificates;
 
 namespace ComandaPro.Repository.Mapping
 {
@@ -14,8 +13,14 @@ namespace ComandaPro.Repository.Mapping
             builder.Property(prop => prop.Quantity).IsRequired();
             builder.Property(prop => prop.UnitPrice).IsRequired();
             builder.Property(prop => prop.Observations).HasMaxLength(100);
-            builder.HasOne(prop => prop.Order);
-            builder.HasOne(prop => prop.Product);
+            builder.Property(prop => prop.OrderId).IsRequired();
+            builder.Property(prop => prop.ProductId).IsRequired();
+            builder.HasOne(prop => prop.Order)
+                .WithMany()
+                .HasForeignKey(prop => prop.OrderId);
+            builder.HasOne(prop => prop.Product)
+                .WithMany()
+                .HasForeignKey(prop => prop.ProductId);
         }
     }
 }

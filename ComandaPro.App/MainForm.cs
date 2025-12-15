@@ -1,5 +1,6 @@
 using ComandaPro.App.Infra;
 using ComandaPro.App.Others;
+using ComandaPro.App.Others.CustomerForms;
 using ComandaPro.App.Register;
 using ComandaPro.App.ViewModel;
 using ComandaPro.Domain.Entities;
@@ -56,7 +57,7 @@ namespace ComandaPro.App
         {
             adminPanel.Visible = false;
             restaurantPanel.Visible = false;
-            //customerPanel.Visible = false;
+            customerPanel.Visible = false;
 
             if (User.UserType == null) return;
 
@@ -71,7 +72,7 @@ namespace ComandaPro.App
                     break;
 
                 case User.Type.Customer:
-                    //pnlCustomer.Visible = true;
+                    customerPanel.Visible = true;
                     break;
 
                 default:
@@ -104,8 +105,17 @@ namespace ComandaPro.App
                 case "btnCategory":
                     OpenPanelForm<CategoryForm>(formPanel);
                     break;
+                case "btnProduct":
+                    OpenPanelForm<ProductForm>(formPanel);
+                    break;
                 case "btnUser":
                     OpenPanelForm<UserListForm>(formPanel);
+                    break;
+                case "btnRestaurants":
+                    OpenPanelForm<RestaurantMenu>(formPanel);
+                    break;
+                case "btnMyOrders":
+                    OpenPanelForm<ClientOrder>(formPanel);
                     break;
             }
         }

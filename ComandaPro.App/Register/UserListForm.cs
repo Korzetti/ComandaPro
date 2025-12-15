@@ -83,6 +83,7 @@ namespace ComandaPro.App.Register
         {
             users = _userService.Get<UserViewModel>().ToList();
             dataGridViewList.DataSource = users;
+            dataGridViewList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         protected override void GridToForm(DataGridViewRow? record)

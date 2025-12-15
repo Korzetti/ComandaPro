@@ -21,6 +21,7 @@ namespace ComandaPro.App.Register
         private void FormToObject(Category category)
         {
             category.Name = nameTxt.Text;
+            category.UserId = MainForm.User.Id;
         }
 
         protected override void Save()
@@ -63,8 +64,12 @@ namespace ComandaPro.App.Register
 
         protected override void PopulateGrid()
         {
-            categories = _categoryService.Get<CategoryViewModel>().ToList();
+            categories = _categoryService.Get<CategoryViewModel>()
+                .Where(c => c.UserName == MainForm.User.Name)
+                .ToList();
             dataGridViewList.DataSource = categories;
+            dataGridViewList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewList.Columns["UserName"].Visible = false;
         }
 
         protected override void GridToForm(DataGridViewRow? record)

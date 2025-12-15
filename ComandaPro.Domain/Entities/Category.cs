@@ -9,11 +9,14 @@ namespace ComandaPro.Domain.Entities
 
         }
         
-        public Category(int id, string name) : base(id)
+        public Category(int id, string name, User user) : base(id)
         {
             Name = name;
+            User = user; 
         }
 
         public string Name { get; set; }
+        public int UserId { get; set; }
+        public User User { get; set; }
     }
 }

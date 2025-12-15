@@ -53,7 +53,7 @@
             btnEdit.Image = null;
             btnEdit.ImageAlign = ContentAlignment.MiddleLeft;
             btnEdit.InactiveColor = Color.FromArgb(32, 34, 37);
-            btnEdit.Location = new Point(186, 336);
+            btnEdit.Location = new Point(932, 692);
             btnEdit.Name = "btnEdit";
             btnEdit.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnEdit.PressedColor = Color.FromArgb(165, 37, 37);
@@ -73,7 +73,7 @@
             btnDelete.Image = null;
             btnDelete.ImageAlign = ContentAlignment.MiddleLeft;
             btnDelete.InactiveColor = Color.FromArgb(32, 34, 37);
-            btnDelete.Location = new Point(339, 336);
+            btnDelete.Location = new Point(1080, 692);
             btnDelete.Name = "btnDelete";
             btnDelete.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnDelete.PressedColor = Color.FromArgb(165, 37, 37);
@@ -94,7 +94,7 @@
             tabControlRegister.Multiline = true;
             tabControlRegister.Name = "tabControlRegister";
             tabControlRegister.SelectedIndex = 0;
-            tabControlRegister.Size = new Size(506, 422);
+            tabControlRegister.Size = new Size(1219, 784);
             tabControlRegister.TabIndex = 4;
             // 
             // tabPageList
@@ -106,7 +106,7 @@
             tabPageList.Location = new Point(4, 24);
             tabPageList.Name = "tabPageList";
             tabPageList.Padding = new Padding(3);
-            tabPageList.Size = new Size(498, 394);
+            tabPageList.Size = new Size(1211, 756);
             tabPageList.TabIndex = 0;
             tabPageList.Text = "tabPage1";
             tabPageList.UseVisualStyleBackColor = true;
@@ -121,7 +121,7 @@
             btnNew.Image = null;
             btnNew.ImageAlign = ContentAlignment.MiddleLeft;
             btnNew.InactiveColor = Color.FromArgb(32, 34, 37);
-            btnNew.Location = new Point(38, 336);
+            btnNew.Location = new Point(793, 692);
             btnNew.Name = "btnNew";
             btnNew.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnNew.PressedColor = Color.FromArgb(165, 37, 37);
@@ -133,17 +133,17 @@
             // 
             // dataGridViewList
             // 
+            dataGridViewList.ForeColor = Color.Black;
             dataGridViewList.AllowUserToAddRows = false;
             dataGridViewList.AllowUserToDeleteRows = false;
             dataGridViewList.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewList.Location = new Point(13, 21);
-            dataGridViewList.ForeColor = Color.Black;
             dataGridViewList.Name = "dataGridViewList";
             dataGridViewList.ReadOnly = true;
             dataGridViewList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewList.Size = new Size(474, 218);
+            dataGridViewList.Size = new Size(1187, 641);
             dataGridViewList.TabIndex = 5;
             // 
             // tabPageRegister
@@ -153,7 +153,7 @@
             tabPageRegister.Location = new Point(4, 24);
             tabPageRegister.Name = "tabPageRegister";
             tabPageRegister.Padding = new Padding(3);
-            tabPageRegister.Size = new Size(498, 394);
+            tabPageRegister.Size = new Size(1211, 756);
             tabPageRegister.TabIndex = 1;
             tabPageRegister.Text = "tabPage2";
             tabPageRegister.UseVisualStyleBackColor = true;
@@ -168,7 +168,7 @@
             btnSave.Image = null;
             btnSave.ImageAlign = ContentAlignment.MiddleLeft;
             btnSave.InactiveColor = Color.FromArgb(32, 34, 37);
-            btnSave.Location = new Point(282, 327);
+            btnSave.Location = new Point(1064, 697);
             btnSave.Name = "btnSave";
             btnSave.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnSave.PressedColor = Color.FromArgb(165, 37, 37);
@@ -188,7 +188,7 @@
             btnCancel.Image = null;
             btnCancel.ImageAlign = ContentAlignment.MiddleLeft;
             btnCancel.InactiveColor = Color.FromArgb(32, 34, 37);
-            btnCancel.Location = new Point(88, 327);
+            btnCancel.Location = new Point(928, 697);
             btnCancel.Name = "btnCancel";
             btnCancel.PressedBorderColor = Color.FromArgb(165, 37, 37);
             btnCancel.PressedColor = Color.FromArgb(165, 37, 37);
@@ -198,15 +198,15 @@
             btnCancel.TextAlignment = StringAlignment.Center;
             btnCancel.Click += btnCancel_Click;
             // 
-            // AdminBaseForm
+            // BaseForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(506, 422);
+            ClientSize = new Size(1219, 784);
             Controls.Add(tabControlRegister);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "AdminBaseForm";
+            Name = "BaseForm";
             Text = "BaseForm";
             tabControlRegister.ResumeLayout(false);
             tabPageList.ResumeLayout(false);

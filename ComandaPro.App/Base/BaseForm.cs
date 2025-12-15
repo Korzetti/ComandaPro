@@ -17,7 +17,7 @@ namespace ComandaPro.App.Base
         }
         #endregion
 
-        #region Events (Botões)
+        #region Events 
 
         protected override void OnLoad(EventArgs e)
         {
@@ -45,7 +45,7 @@ namespace ComandaPro.App.Base
             }
             else
             {
-                MessageBox.Show("Selecione um registro para editar!", "ComandaPro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Select a register do edit!", "ComandaPro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -79,10 +79,6 @@ namespace ComandaPro.App.Base
             }
         }
 
-        private void tabPageList_Load(object sender, EventArgs e)
-        {
-            PopulateGrid();
-        }
         #endregion
 
         #region Virtual Methods 
@@ -99,7 +95,9 @@ namespace ComandaPro.App.Base
         protected virtual void Save() { }
         protected virtual void Delete(int id) { }
         protected virtual void GridToForm(DataGridViewRow row) { }
-        protected virtual void PopulateGrid() { }
+        protected virtual void PopulateGrid() {
+            dataGridViewList.ForeColor = Color.Black;
+        }
 
         #endregion
     }

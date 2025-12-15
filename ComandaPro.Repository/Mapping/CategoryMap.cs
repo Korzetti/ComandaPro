@@ -11,6 +11,9 @@ namespace ComandaPro.Repository.Mapping
             builder.ToTable("Categories");
             builder.HasKey(prop => prop.Id);
             builder.Property(prop => prop.Name);
+            builder.HasOne(prop => prop.User)
+                .WithMany()
+                .HasForeignKey(prop => prop.UserId);
         }
     }
     

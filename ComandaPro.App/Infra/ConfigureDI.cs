@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ComandaPro.App.Others;
+using ComandaPro.App.Others.CustomerForms;
 using ComandaPro.App.ViewModel;
 using ComandaPro.App.Register;
 using ComandaPro.Domain.Base;
@@ -58,6 +59,10 @@ namespace ComandaPro.App.Infra
             services.AddTransient<UserForm, UserForm>();
             services.AddTransient<UserListForm, UserListForm>();
             services.AddTransient<CategoryForm, CategoryForm>();
+            services.AddTransient<ProductForm, ProductForm>();
+            services.AddTransient<RestaurantMenu, RestaurantMenu>();
+            services.AddTransient<Quantity, Quantity>();
+            services.AddTransient<ClientOrder, ClientOrder>();
 
             #endregion
 
@@ -65,12 +70,21 @@ namespace ComandaPro.App.Infra
             services.AddSingleton(
                 new MapperConfiguration(
                     config => {
-                        config.CreateMap<User, UserViewModel>();
-                        config.CreateMap<Product, ProductViewModel>();
-                        config.CreateMap<Payment, PaymentViewModel>();
-                        config.CreateMap<Category, CategoryViewModel>();
-                        config.CreateMap<Order, OrderViewModel>();
-                        config.CreateMap<ItemOrder, ItemOrderViewModel>();
+                        config.CreateMap<User, UserViewModel>()
+                        .ReverseMap();
+                        config.CreateMap<Product, ProductViewModel>()
+                        .ForMember(p => p.CategoryName, opt => opt.MapFrom(src => src.Category.Name))
+                        .ForMember(p => p.CategoryUserId, opt => opt.MapFrom(src => src.Category.UserId))
+                        .ReverseMap();
+                        config.CreateMap<Payment, PaymentViewModel>()
+                        .ReverseMap();
+                        config.CreateMap<Category, CategoryViewModel>()
+                        .ForMember(c => c.UserName, opt => opt.MapFrom(src => src.User.Name))
+                        .ReverseMap();
+                        config.CreateMap<Order, OrderViewModel>()
+                        .ReverseMap();
+                        config.CreateMap<ItemOrder, ItemOrderViewModel>()
+                        .ReverseMap();
                     },
                     NullLoggerFactory.Instance).CreateMapper()
                 );
