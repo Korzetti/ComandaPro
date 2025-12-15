@@ -40,6 +40,10 @@
             tabControlRegister.SuspendLayout();
             SuspendLayout();
             // 
+            // tabPageList
+            // 
+            tabPageList.Size = new Size(498, 394);
+            // 
             // tabPageRegister
             // 
             tabPageRegister.Controls.Add(docTypeCbo);
@@ -66,7 +70,7 @@
             nameTxt.Font = new Font("Segoe UI", 12F);
             nameTxt.ForeColor = Color.FromArgb(48, 49, 51);
             nameTxt.Hint = "Name";
-            nameTxt.Location = new Point(82, 31);
+            nameTxt.Location = new Point(334, 189);
             nameTxt.MaxLength = 32767;
             nameTxt.Multiline = false;
             nameTxt.Name = "nameTxt";
@@ -75,7 +79,7 @@
             nameTxt.SelectedText = "";
             nameTxt.SelectionLength = 0;
             nameTxt.SelectionStart = 0;
-            nameTxt.Size = new Size(320, 38);
+            nameTxt.Size = new Size(458, 38);
             nameTxt.TabIndex = 2;
             nameTxt.TabStop = false;
             nameTxt.UseSystemPasswordChar = false;
@@ -89,7 +93,7 @@
             emailTxt.Font = new Font("Segoe UI", 12F);
             emailTxt.ForeColor = Color.FromArgb(48, 49, 51);
             emailTxt.Hint = "your@email.com";
-            emailTxt.Location = new Point(82, 207);
+            emailTxt.Location = new Point(334, 365);
             emailTxt.MaxLength = 32767;
             emailTxt.Multiline = false;
             emailTxt.Name = "emailTxt";
@@ -98,7 +102,7 @@
             emailTxt.SelectedText = "";
             emailTxt.SelectionLength = 0;
             emailTxt.SelectionStart = 0;
-            emailTxt.Size = new Size(320, 38);
+            emailTxt.Size = new Size(458, 38);
             emailTxt.TabIndex = 3;
             emailTxt.TabStop = false;
             emailTxt.UseSystemPasswordChar = false;
@@ -112,7 +116,7 @@
             passwordTxt.Font = new Font("Segoe UI", 12F);
             passwordTxt.ForeColor = Color.FromArgb(48, 49, 51);
             passwordTxt.Hint = "•••••••••";
-            passwordTxt.Location = new Point(82, 251);
+            passwordTxt.Location = new Point(334, 409);
             passwordTxt.MaxLength = 32767;
             passwordTxt.Multiline = false;
             passwordTxt.Name = "passwordTxt";
@@ -121,7 +125,7 @@
             passwordTxt.SelectedText = "";
             passwordTxt.SelectionLength = 0;
             passwordTxt.SelectionStart = 0;
-            passwordTxt.Size = new Size(320, 38);
+            passwordTxt.Size = new Size(458, 38);
             passwordTxt.TabIndex = 4;
             passwordTxt.TabStop = false;
             passwordTxt.UseSystemPasswordChar = false;
@@ -135,7 +139,7 @@
             phoneTxt.Font = new Font("Segoe UI", 12F);
             phoneTxt.ForeColor = Color.FromArgb(48, 49, 51);
             phoneTxt.Hint = "Telephone";
-            phoneTxt.Location = new Point(82, 75);
+            phoneTxt.Location = new Point(334, 233);
             phoneTxt.MaxLength = 32767;
             phoneTxt.Multiline = false;
             phoneTxt.Name = "phoneTxt";
@@ -144,7 +148,7 @@
             phoneTxt.SelectedText = "";
             phoneTxt.SelectionLength = 0;
             phoneTxt.SelectionStart = 0;
-            phoneTxt.Size = new Size(320, 38);
+            phoneTxt.Size = new Size(458, 38);
             phoneTxt.TabIndex = 5;
             phoneTxt.TabStop = false;
             phoneTxt.UseSystemPasswordChar = false;
@@ -158,7 +162,7 @@
             addressTxt.Font = new Font("Segoe UI", 12F);
             addressTxt.ForeColor = Color.FromArgb(48, 49, 51);
             addressTxt.Hint = "Address";
-            addressTxt.Location = new Point(82, 119);
+            addressTxt.Location = new Point(334, 277);
             addressTxt.MaxLength = 32767;
             addressTxt.Multiline = false;
             addressTxt.Name = "addressTxt";
@@ -167,7 +171,7 @@
             addressTxt.SelectedText = "";
             addressTxt.SelectionLength = 0;
             addressTxt.SelectionStart = 0;
-            addressTxt.Size = new Size(320, 38);
+            addressTxt.Size = new Size(458, 38);
             addressTxt.TabIndex = 6;
             addressTxt.TabStop = false;
             addressTxt.UseSystemPasswordChar = false;
@@ -181,7 +185,7 @@
             documentTxt.Font = new Font("Segoe UI", 12F);
             documentTxt.ForeColor = Color.FromArgb(48, 49, 51);
             documentTxt.Hint = "Document";
-            documentTxt.Location = new Point(82, 163);
+            documentTxt.Location = new Point(334, 321);
             documentTxt.MaxLength = 32767;
             documentTxt.Multiline = false;
             documentTxt.Name = "documentTxt";
@@ -190,7 +194,7 @@
             documentTxt.SelectedText = "";
             documentTxt.SelectionLength = 0;
             documentTxt.SelectionStart = 0;
-            documentTxt.Size = new Size(192, 38);
+            documentTxt.Size = new Size(330, 38);
             documentTxt.TabIndex = 7;
             documentTxt.TabStop = false;
             documentTxt.UseSystemPasswordChar = false;
@@ -203,16 +207,16 @@
             docTypeCbo.FormattingEnabled = true;
             docTypeCbo.ItemHeight = 30;
             docTypeCbo.Items.AddRange(new object[] { "CPF", "CNPJ", "Admin" });
-            docTypeCbo.Location = new Point(282, 165);
+            docTypeCbo.Location = new Point(689, 323);
             docTypeCbo.Name = "docTypeCbo";
-            docTypeCbo.Size = new Size(121, 36);
+            docTypeCbo.Size = new Size(104, 36);
             docTypeCbo.TabIndex = 8;
             // 
             // UserListForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(506, 422);
+            ClientSize = new Size(1219, 784);
             Name = "UserListForm";
             Text = "UserListForm";
             tabPageList.ResumeLayout(false);
